@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+               xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             x:Class="FlowersAndCandyCustomer.SellerViews.EditProduct">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Image HeightRequest="30" WidthRequest="30" Source="ico_back.png"
+                   HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="back_Tapped" ></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="White" Text="{strings:Translate editsellerproduct}"
+                  FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+
+            <Image HeightRequest="25" WidthRequest="25"
+                   HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="#F2F2F2">
+            <StackLayout HorizontalOptions="FillAndExpand" Spacing="6" VerticalOptions="StartAndExpand" Padding="30,15,30,20"
+                     BackgroundColor="#F2F2F2">
+
+
+                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="productNameLbl"
+                   TextColor="Gray" Margin="0,20,0,0" Text="{strings:Translate productcategoryname}" FontSize="Medium" HorizontalOptions="Start"/>
+
+                <Entry  x:Name="productNameTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   FontSize="Medium" TextColor="Black" 
+                   Placeholder="{strings:Translate enterproductcategoryname}" PlaceholderColor="Black"/>
+
+                <!--<Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="productPriceLbl"
+                   TextColor="Gray" Margin="0,20,0,0" Text="{strings:Translate productPrice}" FontSize="Medium" HorizontalOptions="Start"/>
+
+                <Entry Keyboard="Numeric" x:Name="productPriceTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   FontSize="Medium" TextColor="Black" 
+                   Placeholder="{strings:Translate enterProducrPrice}" PlaceholderColor="Black"/>
+
+                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="productquantityLbl"
+                   TextColor="Gray" Margin="0,20,0,0" Text="{strings:Translate productquantity}" FontSize="Medium" HorizontalOptions="Start"/>
+
+                <Entry Keyboard="Numeric" x:Name="productquantityTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   FontSize="Medium" TextColor="Black" 
+                   Placeholder="{strings:Translate enterProductQuantity}" PlaceholderColor="Black"/>
+               
+                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="producttimeLbl"
+                   TextColor="Gray" Margin="0,20,0,0" Text="{strings:Translate prepare_time}" FontSize="Medium" HorizontalOptions="Start"/>
+
+                <Entry Keyboard="Numeric" x:Name="producttimeTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   FontSize="Medium" TextColor="Black" 
+                   Placeholder="{strings:Translate enter_prepare_time}" PlaceholderColor="Black"/>
+
+                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="productDetailLbl"
+                   TextColor="Gray" Margin="0,20,0,0" Text="{strings:Translate productDetail}" FontSize="Medium" HorizontalOptions="Start"/>
+
+                <Entry  x:Name="productDetailTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   FontSize="Medium" TextColor="Black" 
+                   Placeholder="{strings:Translate enterProductDetail}" PlaceholderColor="Black"/>
+                <StackLayout Margin="0,20,0,0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                    <Image x:Name="offers" Source="ico_check.png" VerticalOptions="Center"
+                              HeightRequest="25" WidthRequest="25" HorizontalOptions="Start">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Offer_Tapped"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   TextColor="Black"  Text="{strings:Translate offer}" FontSize="Medium" HorizontalOptions="Start"/>
+
+                </StackLayout>
+                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="uploadProductImageLbl"
+                   TextColor="Black" Margin="0,20,0,0" Text="{strings:Translate uploadProductImage}" FontSize="Medium" HorizontalOptions="Start"/>
+
+
+                <StackLayout HorizontalOptions="StartAndExpand"  Margin="5,10,0,0" x:Name="imgGrid4">
+
+                  
+
+
+                                     <ff:CachedImage CacheType="None" DownsampleHeight="200" x:Name="ProductImg4"  Aspect="Fill" HeightRequest="100" WidthRequest="100" Source="icon_add_file.png" LoadingPlaceholder="icon_add_file.png">
+                                                        
+                    
+              
+                        <ff:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="UploadImg_Tapped">
+                            </TapGestureRecognizer>
+                        </ff:CachedImage.GestureRecognizers>
+                           
+                    </ff:CachedImage>
+                 
+
+                </StackLayout>-->
+
+
+
+
+              
+
+                <Button   Margin="0,30,0,0"   FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}" FontAttributes="Bold" Clicked="AddBtn_Clicked" x:Name="addBtn"
+                         Text="{strings:Translate next}" 
+                         TextColor="White" BackgroundColor="#FE1F78" HorizontalOptions="CenterAndExpand"
+                      WidthRequest="210" BorderRadius="30" FontSize="Medium" VerticalOptions="StartAndExpand"/>
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

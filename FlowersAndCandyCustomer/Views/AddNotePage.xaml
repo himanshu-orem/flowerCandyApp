@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+               xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             x:Class="FlowersAndCandyCustomer.Views.AddNotePage">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Image HeightRequest="30" WidthRequest="30" Source="ico_back.png"
+    
+                   HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="back_Tapped"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="White" Text="{strings:Translate addnote}"
+                  FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+
+            <Image HeightRequest="25" WidthRequest="25"
+                   HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"/>
+
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+
+    <ContentPage.Content>
+
+        <ScrollView>
+
+            <StackLayout BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="0">
+
+
+
+                <StackLayout HorizontalOptions="FillAndExpand" Spacing="-6" VerticalOptions="StartAndExpand" Padding="20,5,20,20"
+                     BackgroundColor="Transparent">
+
+
+                    <Label IsVisible="False" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="uploadCompanyLogoLbl"
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate noteFor}" FontSize="Medium" HorizontalOptions="Start"/>
+
+                    <StackLayout IsVisible="False" Margin="0,20,0,0" Orientation="Horizontal" Padding="0" Spacing="30">
+                        <StackLayout Orientation="Horizontal">
+                            <Image x:Name="sellerImg" Source="ico_round_checked.png" HeightRequest="20" WidthRequest="20"></Image>
+                            <Label  TextColor="Gray" Text="{strings:Translate seller}" StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}"></Label>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer
+                     Tapped="seller_Tapped"
+                    NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image  x:Name="driverImg" Source="ico_round_check.png" HeightRequest="20" WidthRequest="20"></Image>
+                            <Label  TextColor="Gray" Text="{strings:Translate driver}" StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}"></Label>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer
+                     Tapped="driver_Tapped"
+                    NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <Label  IsVisible="False" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"  
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate uploadProductImage}" FontSize="Medium" HorizontalOptions="Start"/>
+
+
+
+
+
+
+                    <StackLayout IsVisible="False" HorizontalOptions="StartAndExpand"  Margin="5,20,0,0">
+
+                        <!--<Frame  BorderColor="Transparent" Padding="0" VerticalOptions="CenterAndExpand"  
+                                    CornerRadius="2" BackgroundColor="Transparent" HasShadow="false" >-->
+
+                        <ff:CachedImage CacheType="None" DownsampleHeight="200" x:Name="userImage" Source="icon_add_file.png"  Aspect="Fill" HeightRequest="100" WidthRequest="100" LoadingPlaceholder="icon_add_file.png">
+
+
+                            <ff:CachedImage.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="UploadImg_Tapped">
+                                </TapGestureRecognizer>
+                            </ff:CachedImage.GestureRecognizers>
+                        </ff:CachedImage>
+                        <!--</Frame>-->
+
+                    </StackLayout>
+
+
+                    <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"  
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate noteDetails}" FontSize="Medium" HorizontalOptions="Start"/>
+
+
+                    <Editor x:Name="txtNote" BackgroundColor="#f2f2f2" HeightRequest="100" Margin="5,20,0,0"  FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start"  
+                   FontSize="14" TextColor="Black"/>
+
+
+
+
+                    <Button    Margin="0,30,0,0" Clicked="DoneBtn_Clicked"  x:Name="doneBtn" FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}" FontAttributes="Bold" Text="{strings:Translate done}" 
+                         TextColor="White" BackgroundColor="#FE1F78" HorizontalOptions="CenterAndExpand"
+                      WidthRequest="210" BorderRadius="30" FontSize="Medium" VerticalOptions="StartAndExpand"/>
+
+
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

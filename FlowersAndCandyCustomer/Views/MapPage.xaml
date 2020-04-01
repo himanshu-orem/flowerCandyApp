@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FlowersAndCandyCustomer.CustomControls"
+              xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+               xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:ffTransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             x:Class="FlowersAndCandyCustomer.Views.MapPage">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Image HeightRequest="30" WidthRequest="30" Source="ico_back.png"
+                   HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="back_Tapped"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="White" Text="{strings:Translate tracking}"
+                  FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+
+            <Image HeightRequest="25" WidthRequest="25"
+                   HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="#edeff2">
+            
+            <StackLayout x:Name="driverLyt" IsVisible="False"  Padding="10,10,10,1" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+            <StackLayout  Orientation="Horizontal" HorizontalOptions="Fill">
+                <ff:CachedImage   CacheType="None"   x:Name="userImage" LoadingPlaceholder="user_placeholder2.png"  Source="user_placeholder2.png" 
+                                                      VerticalOptions="CenterAndExpand" WidthRequest="60" HeightRequest="60" HorizontalOptions="Center"
+                                                 Aspect="AspectFill" >
+                    <ff:CachedImage.Transformations>
+                        <ffTransformations:CircleTransformation BorderSize="5" BorderHexColor="#FE1F78" />
+                    </ff:CachedImage.Transformations>
+                </ff:CachedImage>
+
+                <Label VerticalTextAlignment="Center" FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Black" x:Name="userName"
+                  FontSize="16"/>
+
+                <Image Margin="0,-4,2,0" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Source="call_icon.png" HeightRequest="30" WidthRequest="30">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Call_Tapped">
+                            </TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+            </StackLayout>
+        </StackLayout>
+
+        <Grid RowSpacing="0" VerticalOptions="FillAndExpand">
+
+
+
+            <StackLayout HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" >
+                <StackLayout x:Name="MapLayout" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <local:CustomMap x:Name="customMap" IsShowingUser="true"  MapType="Street"></local:CustomMap>
+                </StackLayout>
+            </StackLayout>
+
+
+
+
+
+            <StackLayout  Grid.Row="0" Padding="5" Grid.Column="0" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+                <Frame    HasShadow="false" CornerRadius="2" Padding="5"   BackgroundColor="Transparent" OutlineColor="Transparent">
+                    <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Red" x:Name="timeTxt"
+                  FontSize="18" VerticalOptions="Center"></Label>
+                </Frame>
+            </StackLayout>
+
+
+             
+
+
+            </Grid>
+
+
+            <Button  FontFamily="{x:Static adc:App_FontFamilies.PageTitles}"  BackgroundColor="#B8074E"
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}" x:Name="deliverLbl" VerticalOptions="End" Clicked="DeliverLbl_Clicked"  HorizontalOptions="FillAndExpand"
+                   TextColor="White" Text="{strings:Translate delivered}" FontSize="Medium"   BorderRadius="0"/>
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

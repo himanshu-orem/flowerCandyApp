@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             x:Class="FlowersAndCandyCustomer.Views.AddDeliveryAddressPage">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Image HeightRequest="30" WidthRequest="30" Source="ico_back.png"
+                   HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                   <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="back_Tapped" ></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+                </Image>
+            
+           <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="White" Text="{strings:Translate customerAddressDetails}"
+                  FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+            
+                  <Image HeightRequest="25" WidthRequest="25"
+                   HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="#F2F2F2">
+      <StackLayout HorizontalOptions="FillAndExpand" Spacing="-6" VerticalOptions="StartAndExpand" Padding="30,15,30,20"
+                     BackgroundColor="#F2F2F2">
+
+
+        <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="fullNameLbl"
+                   TextColor="Gray" Margin="5,40,0,0" Text="{strings:Translate full_name}" FontSize="Medium" HorizontalOptions="Start"/>
+
+            <Entry  x:Name="fullNameTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   FontSize="Medium" TextColor="Black" 
+                   Placeholder="{strings:Translate enter_full_name}" PlaceholderColor="Black"/>
+
+                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="countryLbl"
+                   TextColor="Gray" Margin="5,40,0,0" Text="{strings:Translate country}"
+                       FontSize="Medium" HorizontalOptions="Start"/>
+
+            <Picker x:Name="countryPicker" HorizontalOptions="FillAndExpand" TextColor="Black"
+                    Title="{strings:Translate enter_country}"/>
+
+            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="stateLbl"
+                   TextColor="Gray" Margin="5,40,0,0" Text="{strings:Translate state}" 
+                   FontSize="Medium" HorizontalOptions="Start"/>
+
+            <Entry  x:Name="stateTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   FontSize="Medium" TextColor="Black"
+                   Placeholder="{strings:Translate enter_state}" PlaceholderColor="Black"/>
+
+            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="cityLbl"
+                   TextColor="Gray" Margin="5,40,0,0" Text="{strings:Translate city}" 
+                   FontSize="Medium" HorizontalOptions="Start"/>
+
+            <Entry  x:Name="cityTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   FontSize="Medium" TextColor="Black"
+                   Placeholder="{strings:Translate enter_city}" PlaceholderColor="Black"/>
+
+            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="addressLbl"
+                   TextColor="Gray" Margin="5,40,0,0" Text="{strings:Translate address}" 
+                   FontSize="Medium" HorizontalOptions="Start"/>
+
+                <Entry  Focused="AddressTxt_Focused"  x:Name="addressTxt"  FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   FontSize="Medium" TextColor="Black"
+                   Placeholder="{strings:Translate enter_address}" PlaceholderColor="Black"/>
+
+            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="landmarkLbl"
+                   TextColor="Gray" Margin="5,40,0,0" Text="{strings:Translate landmark}" 
+                   FontSize="Medium" HorizontalOptions="Start"/>
+
+            <Entry  x:Name="landmarkTxt" 
+                   FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   FontSize="Medium" TextColor="Black"
+                   Placeholder="{strings:Translate enter_landmark}" PlaceholderColor="Black"/>
+
+             <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="zipcodeLbl"
+                   TextColor="Gray" Margin="5,40,0,0" Text="{strings:Translate zipcode}" 
+                   FontSize="Medium" HorizontalOptions="Start"/>
+
+            <Entry  x:Name="zipcodeTxt" Keyboard="Numeric"
+                   FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   FontSize="Medium" TextColor="Black"
+                   Placeholder="{strings:Translate enter_zipcode}" PlaceholderColor="Black"/>
+
+                 <Button  Margin="0,30,0,0"   FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}" FontAttributes="Bold" Clicked="Btn_Clicked" x:Name="addBtn"
+                         Text="{strings:Translate done}" 
+                         TextColor="White" BackgroundColor="#FE1F78" HorizontalOptions="CenterAndExpand"
+                      WidthRequest="210" BorderRadius="30" FontSize="Medium" VerticalOptions="StartAndExpand"/>
+
+                </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

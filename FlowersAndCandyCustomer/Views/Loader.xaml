@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlowersAndCandyCustomer.Views.Loader">
+    <ScrollView>
+        <AbsoluteLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <StackLayout x:Name="FrameContainer" BackgroundColor="Transparent"  Padding="0">
+
+                <StackLayout Spacing="10"  BackgroundColor="Transparent" x:Name="layoutMain" Orientation="Vertical">
+                    <ActivityIndicator IsRunning="True" IsVisible="True" Color="#FE1F78"></ActivityIndicator>
+                </StackLayout>
+
+
+            </StackLayout>
+
+        </AbsoluteLayout>
+    </ScrollView>
+</pages:PopupPage>

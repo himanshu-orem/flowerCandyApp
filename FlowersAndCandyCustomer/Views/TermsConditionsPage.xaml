@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             xmlns:custom="clr-namespace:FlowersAndCandyCustomer.CustomControls"
+             x:Class="FlowersAndCandyCustomer.Views.TermsConditionsPage">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+            <Image HeightRequest="30" WidthRequest="30" Source="ico_back.png"
+                   HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                   <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackImgTapped}"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+                </Image>
+            
+           <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="White" Text="{strings:Translate terms_conditions}"
+                  FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+            
+                  <Image HeightRequest="25" WidthRequest="25"
+                   HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"/>
+             
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content Padding="0,0,0,10">
+
+        <ScrollView Padding="0,0,0,10">
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <WebView VerticalOptions="FillAndExpand">
+        <WebView.Source>
+            <HtmlWebViewSource   Html="{Binding TermsConditionsText}"/>
+        </WebView.Source>
+    </WebView>
+            </StackLayout>
+        <!--<Label  FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"
+           HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Start"
+           LineBreakMode="WordWrap" Margin="10"
+           FontSize="Medium" Text="{Binding TermsConditionsText}" TextColor="Gray"/>-->
+
+
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

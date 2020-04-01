@@ -1,0 +1,55 @@
+{
+  "version": 2,
+  "dgSpecHash": "bsUN4a3wHGEB80P1xtAVzgNq+huatG/hUg8WzN/joNLViMjeOxF3CER+33tVn2x9xaFrLuFqdwHEThXQQJAYIQ==",
+  "success": true,
+  "projectFilePath": "E:\\Git\\flowerCandyApp\\FlowersAndCandyCustomer\\FlowersAndCandyCustomer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\papre\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\plugin.firebasepushnotification\\2.3.5\\plugin.firebasepushnotification.2.3.5.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\plugin.imageresizer\\1.0.1-alpha\\plugin.imageresizer.1.0.1-alpha.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\plugin.permissions\\2.0.1\\plugin.permissions.2.0.1.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\rg.plugins.popup\\1.1.5.180\\rg.plugins.popup.1.1.5.180.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\skiasharp\\1.60.0\\skiasharp.1.60.0.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\sqlite-net-pcl\\1.5.231\\sqlite-net-pcl.1.5.231.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\sqlitepclraw.bundle_green\\1.1.11\\sqlitepclraw.bundle_green.1.1.11.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\sqlitepclraw.core\\1.1.11\\sqlitepclraw.core.1.1.11.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\xam.plugin.connectivity\\3.2.0\\xam.plugin.connectivity.3.2.0.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\xam.plugin.geolocator\\3.0.4\\xam.plugin.geolocator.3.0.4.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\xam.plugin.media\\3.1.1\\xam.plugin.media.3.1.1.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\xam.plugins.forms.imagecircle\\3.0.0.5\\xam.plugins.forms.imagecircle.3.0.0.5.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\xamarin.build.download\\0.8.0\\xamarin.build.download.0.8.0.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\xamarin.ffimageloading\\2.4.4.859\\xamarin.ffimageloading.2.4.4.859.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\xamarin.ffimageloading.forms\\2.4.4.859\\xamarin.ffimageloading.forms.2.4.4.859.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\xamarin.ffimageloading.svg\\2.4.4.859\\xamarin.ffimageloading.svg.2.4.4.859.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\xamarin.ffimageloading.svg.forms\\2.4.4.859\\xamarin.ffimageloading.svg.forms.2.4.4.859.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\xamarin.ffimageloading.transformations\\2.4.4.859\\xamarin.ffimageloading.transformations.2.4.4.859.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\xamarin.forms\\3.4.0.1009999\\xamarin.forms.3.4.0.1009999.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\xamarin.forms.extended.infinitescrolling\\1.0.0-preview2\\xamarin.forms.extended.infinitescrolling.1.0.0-preview2.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\xamarin.forms.maps\\3.2.0.871581\\xamarin.forms.maps.3.2.0.871581.nupkg.sha512",
+    "C:\\Users\\papre\\.nuget\\packages\\xamarin.forms.openwhatsapp\\1.0.1\\xamarin.forms.openwhatsapp.1.0.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Plugin.ImageResizer 1.0.1-alpha' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Plugin.ImageResizer",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Xam.Plugin.Geolocator 3.0.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Xam.Plugin.Geolocator",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
+}

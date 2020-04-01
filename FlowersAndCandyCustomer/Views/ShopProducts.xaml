@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             xmlns:extended="clr-namespace:Xamarin.Forms.Extended;assembly=Xamarin.Forms.Extended.InfiniteScrolling"
+               xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="FlowersAndCandyCustomer.Views.ShopProducts">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Image HeightRequest="30" WidthRequest="30" Source="ico_back.png"
+                   HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="back_Tapped" ></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="White" Text="{strings:Translate products}"
+                  FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+
+            <Image HeightRequest="25" WidthRequest="25"
+                   HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+
+
+        
+
+
+
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0" Padding="0" Margin="0">
+
+              <Label x:Name="nodataImg" IsVisible="false" FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Red" Text="{strings:Translate nodata}"
+                  FontSize="Large" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"/>
+
+            <ListView  x:Name="GroupedView" HasUnevenRows="true"
+    GroupDisplayBinding="{Binding Title}" ItemSelected="GroupedView_ItemSelected" 
+     SeparatorVisibility="None"
+    IsGroupingEnabled="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                           
+
+                                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" 
+                                         Padding="5" BackgroundColor="Transparent">
+
+                                    <Frame HasShadow="false" CornerRadius="0" Padding="0"   BackgroundColor="White"
+                                   HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" OutlineColor="White">
+
+                                        <Grid Padding="0" ColumnSpacing="10">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="100"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Frame Padding="0" HeightRequest="50"  Grid.Row="0" Grid.Column="0" WidthRequest="50" HasShadow="false" BackgroundColor="Transparent" OutlineColor="Transparent" CornerRadius="2">
+
+
+
+
+                                            <Grid RowSpacing="0">
+                                                <StackLayout HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" >
+
+                                                    <ff:CachedImage   CacheType="None"
+                                  
+                                                Aspect="AspectFill"  LoadingPlaceholder="product_Placeholder.png" Source="{Binding ProductImage}">
+                                                    </ff:CachedImage>
+                                                </StackLayout>
+                                                <StackLayout IsVisible="{Binding isvisible}"  Grid.Row="0" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                                    <Frame Opacity="0.7" HeightRequest="100" WidthRequest="50"  HasShadow="false" CornerRadius="0" Padding="0"   BackgroundColor="Black" OutlineColor="Black">
+
+                                                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="White" Text="{strings:Translate finished}"
+                  FontSize="12" VerticalOptions="Center"></Label>
+
+
+
+                                                    </Frame>
+                                                </StackLayout>
+                                            </Grid>
+
+                                            </Frame>
+
+
+                                            <StackLayout Padding="5" Grid.Row="0" Grid.Column="1" Spacing="10" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+
+                                                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Black" Text="{Binding ProductName}" FontSize="Medium" HorizontalOptions="Start"/>
+
+                                                <StackLayout Orientation="Horizontal" Spacing="10">
+
+                                                    <Label   LineBreakMode="TailTruncation" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"
+                   TextColor="Black" Text="{Binding ShopAddress}" FontSize="Small" HorizontalOptions="Start"/>
+                                                </StackLayout>
+
+                                                <StackLayout Orientation="Horizontal" Spacing="10">
+
+                                                    <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"
+                   TextColor="Black" Text="{Binding ProductPrice}" FontSize="Small" HorizontalOptions="Start"/>
+                                                    <Label Margin="-2,0,0,0" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"
+                   TextColor="Black" Text="SAR" FontSize="Small" HorizontalOptions="Start"/>
+                                                </StackLayout>
+
+                                            </StackLayout>
+                                        </Grid>
+
+                                    </Frame>
+                                </StackLayout>
+
+                             
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+
+                            <StackLayout VerticalOptions="CenterAndExpand"  BackgroundColor="White" x:Name="Items">
+
+
+
+
+                               
+
+
+
+                                    <StackLayout Grid.Row="0" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="CenterAndExpand">
+
+                                    <Frame HasShadow="False" VerticalOptions="CenterAndExpand"  Padding="2"  CornerRadius="0" BackgroundColor="#D9D9D9" OutlineColor="#D9D9D9">
+                                            <Label Grid.Row="0" Grid.Column="0" FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="#FE1F78" Text="{Binding Name}" LineBreakMode="TailTruncation" VerticalTextAlignment="Center" FontSize="18" HorizontalOptions="CenterAndExpand"/>
+                                        </Frame>
+
+                                       
+
+
+
+
+
+                                    </StackLayout>
+
+                                 
+
+                                 
+
+
+                            </StackLayout>
+
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+            </ListView>
+
+
+
+
+
+
+
+
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+             x:Class="FlowersAndCandyCustomer.Views.OtpPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10" Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Image Source="close.png" WidthRequest="25" HeightRequest="25" Margin="20,20,0,0" HorizontalOptions="Start"
+               VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="back_Tapped"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+            <StackLayout   Padding="10" Orientation="Vertical"  HorizontalOptions="FillAndExpand"   VerticalOptions="CenterAndExpand">
+                <Image Margin="20,0,0,0" Source="otpPhn.png" 
+                              HeightRequest="80" WidthRequest="100" HorizontalOptions="CenterAndExpand">
+                </Image>
+
+                <Label TextColor="Gray" FontSize="18" HorizontalTextAlignment="Center" Text="{strings:Translate otpVerification}"></Label>
+                <Label TextColor="Gray" FontSize="14" HorizontalTextAlignment="Center" Text="{strings:Translate codeSendTo}"></Label>
+                <Label TextColor="Gray" FontSize="14" HorizontalTextAlignment="Center" Text="{strings:Translate yourPhoneNumber}"></Label>
+
+
+
+                <StackLayout   HorizontalOptions="CenterAndExpand"  Orientation="Vertical" Padding="28,10,28,10" Spacing="15">
+
+
+
+                    <StackLayout Spacing="15" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+
+                        <Frame x:Name="frm1" HasShadow="False" Padding="10,1,10,1"   OutlineColor="Black">
+                            <Entry   FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" Keyboard="Numeric" TextChanged="click_otp1" x:Name="txtFirstNumber"  TextColor="Black" PlaceholderColor="Black"
+                          HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"  FontSize="14" BackgroundColor="Transparent"></Entry>
+                        </Frame>
+                        <Frame x:Name="frm2" HasShadow="False" Padding="10,1,10,1"  OutlineColor="Black">
+                            <Entry FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" Keyboard="Numeric" TextChanged="click_otp2" x:Name="txtSecondNumber" TextColor="Black" PlaceholderColor="Black"
+                          HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"   FontSize="14" BackgroundColor="Transparent"></Entry>
+                        </Frame>
+                        <Frame x:Name="frm3" HasShadow="False" Padding="10,1,10,1"  OutlineColor="Black">
+                            <Entry FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" Keyboard="Numeric" TextChanged="click_otp3" x:Name="txtThirdNumber" TextColor="Black" PlaceholderColor="Black"
+                           HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  FontSize="14" BackgroundColor="Transparent"></Entry>
+
+                        </Frame>
+                        <Frame x:Name="frm4" HasShadow="False" Padding="10,1,10,1"  OutlineColor="Black">
+                            <Entry FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" Keyboard="Numeric" TextChanged="click_otp4" x:Name="txtFourthNumber"  TextColor="Black" PlaceholderColor="Black"
+                         HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  FontSize="14" BackgroundColor="Transparent"></Entry>
+                        </Frame>
+                        <Frame x:Name="frm5" HasShadow="False" Padding="10,1,10,1"  OutlineColor="Black">
+
+                            <Entry FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" Keyboard="Numeric" TextChanged="click_otp5" x:Name="txtFifthNumber" TextColor="Black" PlaceholderColor="Black"
+                        HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"   FontSize="14" BackgroundColor="Transparent"></Entry>
+                        </Frame>
+                    </StackLayout>
+
+                    <Button Clicked="done_Clicked" Margin="0,60,0,0" x:Name="doneBtn" FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}" Text="{strings:Translate done}" 
+                         TextColor="White" BackgroundColor="#FE1F78" HorizontalOptions="CenterAndExpand"
+                      WidthRequest="210" BorderRadius="30" FontSize="Medium" VerticalOptions="StartAndExpand"/>
+                </StackLayout>
+
+                <Label  FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+           StyleId="{x:Static adc:App_FontFamilies.PageTitles}" HorizontalOptions="Center" VerticalOptions="End" FontSize="14" TextColor="Black" Text="{strings:Translate resendDone}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                     Tapped="ResendOtp_Tapped"
+                    NumberOfTapsRequired="1" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

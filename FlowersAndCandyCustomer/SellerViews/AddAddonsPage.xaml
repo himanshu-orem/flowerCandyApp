@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+               xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="FlowersAndCandyCustomer.SellerViews.AddAddonsPage">
+
+    <ContentPage.Content>
+
+        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical"    VerticalOptions="FillAndExpand" Padding="10,1,10,10">
+            <Image Source="close.png" WidthRequest="25" HeightRequest="25" Margin="20,20,0,0" HorizontalOptions="Start"
+               VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="back_Tapped"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+
+
+
+
+
+
+
+
+
+
+
+
+            <ListView   SeparatorVisibility="None"  ItemsSource="{Binding Items}" ItemSelected="AddonListView_ItemSelected"   x:Name="addonListView"  CachingStrategy="RecycleElement" HasUnevenRows="True">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <StackLayout x:Name="Items" Orientation="Vertical">
+
+                                <StackLayout IsVisible="{Binding addButton}" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+
+                                    </StackLayout>
+                                    <StackLayout  Margin="0,0,10,0" Spacing="20" Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                                        <Image Source="plus_ic.png" HeightRequest="40" WidthRequest="40">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer
+                     Command="{Binding addMoreButton}"  
+                                                         BindingContext="{Binding Source={x:Reference addonListView}, Path=BindingContext}"  
+                                                        CommandParameter="{Binding Source={x:Reference Items}, Path=BindingContext}"  
+                    NumberOfTapsRequired="1" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+
+                                        <Image Source="save_ic.png" HeightRequest="30" WidthRequest="30">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer
+                     Command="{Binding saveButton}"  
+                                                         BindingContext="{Binding Source={x:Reference addonListView}, Path=BindingContext}"  
+                                                        CommandParameter="{Binding Source={x:Reference Items}, Path=BindingContext}"  
+                    NumberOfTapsRequired="1" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+
+                                    </StackLayout>
+                                </StackLayout>
+
+
+
+
+                                <StackLayout Padding="5" HorizontalOptions="FillAndExpand">
+
+                                    <Frame HasShadow="False" OutlineColor="#D9D9D9" CornerRadius="2" Padding="0">
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+
+                                            <StackLayout BackgroundColor="#D9D9D9" Padding="5" VerticalOptions="CenterAndExpand" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                                <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                                    <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"  
+                   TextColor="Black"   Text="" FontSize="14" HorizontalOptions="StartAndExpand"/>
+                                                </StackLayout>
+                                                <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                                                    <Image IsVisible="{Binding deleteButton}" Source="delete_address.png" HeightRequest="25" WidthRequest="25">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer
+                     Command="{Binding deleteAddonsButton}"  
+                                                         BindingContext="{Binding Source={x:Reference addonListView}, Path=BindingContext}"  
+                                                        CommandParameter="{Binding Source={x:Reference Items}, Path=BindingContext}"  
+                    NumberOfTapsRequired="1" />
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                </StackLayout>
+                                            </StackLayout>
+
+
+
+                                            <StackLayout Padding="10,0,10,0" Spacing="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="addonNameLbl"
+                   TextColor="Gray"  Text="{strings:Translate productName}"  FontSize="14" HorizontalOptions="Start"/>
+
+                                                <Entry  x:Name="addonNameTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   FontSize="14" TextColor="Black" Text="{Binding name}"
+                   Placeholder="{strings:Translate enterProductName}" PlaceholderColor="Black"/>
+                                            </StackLayout>
+
+
+
+
+                                            <StackLayout Padding="10,0,10,0" Spacing="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="addonPricLbl"
+                   TextColor="Gray"  Text="{strings:Translate addonLPrice}" FontSize="14" HorizontalOptions="Start"/>
+
+                                                <Entry  x:Name="addonPriceTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   FontSize="14" TextColor="Black" Text="{Binding priceL}"
+                   Placeholder="{strings:Translate enterProducrPrice}" Keyboard="Numeric" PlaceholderColor="Black"/>
+                                            </StackLayout>
+
+                                            <StackLayout Padding="10,0,10,0" Spacing="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="addonMPricLbl"
+                   TextColor="Gray"  Text="{strings:Translate addonMPrice}" FontSize="14" HorizontalOptions="Start"/>
+
+                                                <Entry  x:Name="addonMPriceTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   FontSize="14" TextColor="Black" Text="{Binding priceM}"
+                   Placeholder="{strings:Translate enterProducrPrice}" Keyboard="Numeric" PlaceholderColor="Black"/>
+                                            </StackLayout>
+
+                                            <StackLayout Padding="10,0,10,0" Spacing="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="addonSPricLbl"
+                   TextColor="Gray"  Text="{strings:Translate addonSPrice}" FontSize="14" HorizontalOptions="Start"/>
+
+                                                <Entry  x:Name="addonSPriceTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   FontSize="14" TextColor="Black" Text="{Binding priceS}"
+                   Placeholder="{strings:Translate enterProducrPrice}" Keyboard="Numeric" PlaceholderColor="Black"/>
+                                            </StackLayout>
+
+
+
+
+
+
+
+                                            <StackLayout Padding="10,0,10,0" Spacing="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="addonQtyLbl"
+                   TextColor="Gray"  Text="{strings:Translate addonQty}" FontSize="14" HorizontalOptions="Start"/>
+
+                                                <Entry  x:Name="addonQtyTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   FontSize="14" TextColor="Black" Text="{Binding qty}"
+                   Placeholder="{strings:Translate enteraddonQty}" Keyboard="Numeric" PlaceholderColor="Black"/>
+                                            </StackLayout>
+
+
+                                            <StackLayout Padding="10,5,10,0" Spacing="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Image HeightRequest="25" WidthRequest="25" Source="{Binding acdcImg}"></Image>
+                                                    <Label Margin="0,2,0,0" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"
+                   TextColor="Gray"  Text="{Binding acdcLbl}" FontSize="14" HorizontalOptions="Start"/>
+                                                   
+                                                </StackLayout>
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                     Command="{Binding AcDc_Tapped}"  
+                                                         BindingContext="{Binding Source={x:Reference addonListView}, Path=BindingContext}"  
+                                                        CommandParameter="{Binding Source={x:Reference Items}, Path=BindingContext}"  
+                    NumberOfTapsRequired="1" />
+                                                </StackLayout.GestureRecognizers>
+                                            </StackLayout>
+
+
+
+
+
+
+                                            <StackLayout  Padding="10,10,10,20" HorizontalOptions="StartAndExpand">
+
+                                                <ff:CachedImage CacheType="None" DownsampleHeight="200" Aspect="Fill" HeightRequest="60" WidthRequest="60" LoadingPlaceholder="icon_add_file.png" Source="{Binding imgSource}">
+
+
+
+
+
+                                                    <ff:CachedImage.GestureRecognizers>
+                                                        <TapGestureRecognizer
+                     Command="{Binding UploadAddonImg_Tapped}"  
+                                                         BindingContext="{Binding Source={x:Reference addonListView}, Path=BindingContext}"  
+                                                        CommandParameter="{Binding Source={x:Reference Items}, Path=BindingContext}"  
+                    NumberOfTapsRequired="1" />
+                                                    </ff:CachedImage.GestureRecognizers>
+                                                </ff:CachedImage>
+
+
+                                            </StackLayout>
+
+
+
+                                        </StackLayout>
+                                    </Frame>
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

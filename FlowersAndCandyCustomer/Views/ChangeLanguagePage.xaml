@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             x:Class="FlowersAndCandyCustomer.Views.ChangeLanguagePage">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Image HeightRequest="30" WidthRequest="30" Source="ico_back.png"
+                   HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="White" Text="{strings:Translate setting}"
+                  FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+
+            <Image HeightRequest="25" WidthRequest="25"
+                   HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"/>
+
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <StackLayout Spacing="40" Padding="20" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label HorizontalTextAlignment="Start" FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+           StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+           FontAttributes="Bold" FontSize="18" Text="English" TextColor="#FE1F78"/>
+                <Image HorizontalOptions="EndAndExpand" HeightRequest="30" WidthRequest="30" x:Name="eng"></Image>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="en_Tapped" ></TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <BoxView Color="#FE1F78" HeightRequest="0.5" HorizontalOptions="FillAndExpand" />
+            <StackLayout Spacing="40" Padding="20" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label HorizontalTextAlignment="Start" FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+           StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+           FontAttributes="Bold" FontSize="18" Text="عربي" TextColor="#FE1F78"/>
+                <Image HorizontalOptions="EndAndExpand" HeightRequest="30" WidthRequest="35" x:Name="arb"></Image>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ar_Tapped" ></TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <BoxView Color="#FE1F78" HeightRequest="0.5" HorizontalOptions="FillAndExpand" />
+
+
+            
+            
+            <StackLayout IsVisible="False" x:Name="sellerLyt">
+                <StackLayout Spacing="40" Padding="20" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+           StyleId="{x:Static adc:App_FontFamilies.PageTitles}" HorizontalTextAlignment="Start"
+           FontAttributes="Bold" FontSize="18" Text="{strings:Translate shop}" TextColor="#FE1F78"/>
+
+                    <StackLayout VerticalOptions="CenterAndExpand" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                    <Label Margin="0,5,0,0" FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+           StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+           FontAttributes="Bold" FontSize="14" x:Name="shopTxt" Text="{strings:Translate close}" TextColor="Black"/>
+                        <Switch  x:Name="shopToggel"  Toggled="shop_Toggled"></Switch>
+                    </StackLayout>
+
+                </StackLayout>
+                <BoxView Color="#FE1F78" HeightRequest="0.5" HorizontalOptions="FillAndExpand" />
+               
+                
+                <StackLayout Spacing="40" Padding="20" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+           StyleId="{x:Static adc:App_FontFamilies.PageTitles}" HorizontalTextAlignment="Start"
+           FontAttributes="Bold" FontSize="18" Text="{strings:Translate status}" TextColor="#FE1F78"/>
+
+                    <StackLayout VerticalOptions="CenterAndExpand" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                        <Label Margin="0,5,0,0" FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+           StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+           FontAttributes="Bold" FontSize="14" x:Name="statusTxt" Text="OFFLINE" TextColor="Black" />
+                        <Switch x:Name="statusToggel"  Toggled="status_Toggled"></Switch>
+                    </StackLayout>
+
+                </StackLayout>
+                <BoxView Color="#FE1F78" HeightRequest="0.5" HorizontalOptions="FillAndExpand" />
+
+            </StackLayout>
+        
+        
+        
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

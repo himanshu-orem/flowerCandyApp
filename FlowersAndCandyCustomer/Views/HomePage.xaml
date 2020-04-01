@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             xmlns:extended="clr-namespace:Xamarin.Forms.Extended;assembly=Xamarin.Forms.Extended.InfiniteScrolling"
+               xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="FlowersAndCandyCustomer.Views.HomePage">
+
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0" Padding="0" Margin="0">
+
+    <ScrollView Orientation="Horizontal" BackgroundColor="White">
+
+            <StackLayout x:Name="_categoryLyt" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Spacing="15" Padding="10">
+
+               
+                
+        </StackLayout>
+    </ScrollView>
+            
+   
+
+        
+
+
+
+
+
+
+
+        <ListView  BackgroundColor="#F2F2F2"  IsPullToRefreshEnabled="true"   Refreshing="ProductListView_Refreshing"  ItemSelected="ProductListView_ItemSelected"   SeparatorVisibility="None"   x:Name="productListView" ItemsSource="{Binding Items}" CachingStrategy="RecycleElement" HasUnevenRows="True">
+
+            <ListView.Behaviors>
+                <extended:InfiniteScrollBehavior IsLoadingMore="{Binding IsBusy}" />
+            </ListView.Behaviors>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" 
+                                         Padding="2" BackgroundColor="#F2F2F2">
+
+                            <Frame HasShadow="false" CornerRadius="0" Padding="0"   BackgroundColor="White"
+                                   HorizontalOptions="FillAndExpand" VerticalOptions="Start" OutlineColor="#D9D9D9">
+
+                                <Grid Padding="0" ColumnSpacing="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Frame Padding="0" HeightRequest="50"  Grid.Row="0" Grid.Column="0" WidthRequest="90" HasShadow="false" BackgroundColor="Transparent" OutlineColor="Transparent" CornerRadius="2">
+                                                        <ff:CachedImage  Aspect="Fill" HeightRequest="50" WidthRequest="80" LoadingPlaceholder="product_Placeholder.png" Source="{Binding image}">
+                                    </ff:CachedImage>
+                                        <!--<Image Aspect="Fill"    HeightRequest="50"  WidthRequest="90"    Source="{Binding image}">
+                                    </Image>-->
+                                    </Frame>
+
+
+                                    <StackLayout Padding="7" Grid.Row="0" Grid.Column="1" Spacing="10" HorizontalOptions="FillAndExpand">
+
+                                        <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Black" Text="{Binding name}" FontSize="Medium" HorizontalOptions="Start"/>
+
+                                        <StackLayout Orientation="Horizontal" Spacing="10">
+                                            <Image Source="ico_location.png" HeightRequest="20" WidthRequest="20"></Image>
+
+                                            <Label   LineBreakMode="TailTruncation" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"
+                   TextColor="#8F8F8F" Text="{Binding shopaddress}" FontSize="Small" HorizontalOptions="Start"/>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal" Spacing="10">
+                                            <Image Source="time.png" HeightRequest="20" WidthRequest="20"></Image>
+
+                                            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"
+                   TextColor="#8F8F8F" Text="{Binding prepare_time}" FontSize="Small" HorizontalOptions="Start"/>
+                                            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"
+                   TextColor="#8F8F8F" Text="{strings:Translate minute}" FontSize="Small" HorizontalOptions="Start"/>
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </Grid>
+
+                            </Frame>
+                        </StackLayout>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+            <ListView.Footer>
+                <Grid Padding="6" IsVisible="{Binding IsBusy}">
+                    <!-- set the footer to have a zero height when invisible -->
+                    <Grid.Triggers>
+                        <Trigger TargetType="Grid" Property="IsVisible" Value="False">
+                            <Setter Property="HeightRequest" Value="0" />
+                        </Trigger>
+                    </Grid.Triggers>
+                    <!-- the loading content -->
+                    <!--<Label Text="Loading..." TextColor="DeepPink" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />-->
+                    <ActivityIndicator HeightRequest="20" WidthRequest="20" IsRunning="True" IsVisible="True" Color="Black" VerticalOptions="Center" HorizontalOptions="Center"></ActivityIndicator>
+                </Grid>
+            </ListView.Footer>
+
+        </ListView>
+
+
+
+
+
+
+
+
+    </StackLayout>
+</ContentView>

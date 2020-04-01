@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+               xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             x:Class="FlowersAndCandyCustomer.SellerViews.AddShopPage">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="0">
+
+                <Image Source="close.png" WidthRequest="25" HeightRequest="25" Margin="20,20,0,0" HorizontalOptions="Start"
+               VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <StackLayout HorizontalOptions="FillAndExpand" Spacing="6" VerticalOptions="StartAndExpand" Padding="20,15,20,20"
+                     BackgroundColor="Transparent">
+
+                    <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+           StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+           HorizontalOptions="Start" Margin="0,15,0,0" HorizontalTextAlignment="Start" VerticalOptions="Start"
+
+           FontAttributes="Bold" FontSize="30" Text="{strings:Translate addShop}" TextColor="#444444"/>
+
+                    <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="companyNameLbl"
+                   TextColor="Gray" Margin="0,40,0,0" Text="{strings:Translate companyName}" FontSize="Medium" HorizontalOptions="Start"/>
+
+                    <Entry   x:Name="companNameTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate enterCompanyName}"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+
+                    <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="licenceNumberLbl"
+                   TextColor="Gray" Margin="0,20,0,0" Text="{strings:Translate licenceNumber}" FontSize="Medium" HorizontalOptions="Start"/>
+
+                    <Entry   x:Name="licenceNumberTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate enterLicenceNumber}"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+
+
+
+
+                    <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="addressNumberLbl"
+                   TextColor="Gray" Margin="0,20,0,0" Text="{strings:Translate address}" FontSize="Medium" HorizontalOptions="Start"/>
+
+                    <Entry  Focused="AddressNumberTxt_Focused" x:Name="addressNumberTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate enterShopAddress}"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+
+
+
+
+
+
+                     
+
+
+
+
+               
+
+                    <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"  
+                   TextColor="Gray" Margin="0,20,0,0" Text="{strings:Translate uploadCompanyLogo}" FontSize="Medium" HorizontalOptions="Start"/>
+
+
+
+                   
+
+                        <Grid
+                     
+                        
+                       Margin="0,20,0,0" VerticalOptions="Center" HorizontalOptions="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="220">
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="160">
+                                </RowDefinition>
+
+                                <RowDefinition Height="60">
+                                </RowDefinition>
+
+                            </Grid.RowDefinitions>
+
+
+                        <Frame  BorderColor="Transparent" Padding="2" VerticalOptions="CenterAndExpand"  WidthRequest="150" HeightRequest="150" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" 
+                                    CornerRadius="5" BackgroundColor="White" OutlineColor="Gray" HasShadow="false" >
+
+                                <ff:CachedImage CacheType="None"   x:Name="userImage" LoadingPlaceholder="product_Placeholder.png"  Grid.Row="0" Grid.Column="0" Source="product_Placeholder.png" 
+                                                      VerticalOptions="CenterAndExpand" WidthRequest="150" HeightRequest="150" HorizontalOptions="Center"
+                                                 Aspect="AspectFit" >
+                                </ff:CachedImage>
+
+
+
+
+
+
+
+                            </Frame>
+
+                            <Image  Source="camera_ic.png" Margin="0,75,25,0" WidthRequest="30" Grid.RowSpan="2" Grid.Column="0" HeightRequest="30" VerticalOptions="Center" HorizontalOptions="End">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Cimg_Tapped">
+                                    </TapGestureRecognizer>
+                                </Image.GestureRecognizers>
+                            </Image>
+
+                        </Grid>
+
+
+                    <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   TextColor="Gray" Margin="0,20,0,0" Text="{strings:Translate uploadCompanyBanner}" FontSize="Medium" HorizontalOptions="Start"/>
+
+
+
+
+
+                    <Grid
+                     
+                        
+                       Margin="0,20,0,0" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="220">
+                            </ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="160">
+                            </RowDefinition>
+
+                            <RowDefinition Height="60">
+                            </RowDefinition>
+
+                        </Grid.RowDefinitions>
+
+
+                        <Frame  BorderColor="Transparent" Padding="2" VerticalOptions="CenterAndExpand"  WidthRequest="150" HeightRequest="150" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" 
+                                    CornerRadius="5" BackgroundColor="White" OutlineColor="Gray" HasShadow="false" >
+
+                            <ff:CachedImage CacheType="None"   x:Name="bannerImage" LoadingPlaceholder="product_Placeholder.png"  Grid.Row="0" Grid.Column="0"  Source="product_Placeholder.png"
+                                                      VerticalOptions="CenterAndExpand" WidthRequest="150" HeightRequest="150" HorizontalOptions="Center"
+                                                 Aspect="AspectFit" >
+                            </ff:CachedImage>
+
+
+
+
+
+
+
+                        </Frame>
+
+                        <Image  Source="camera_ic.png" Margin="0,75,25,0" WidthRequest="30" Grid.RowSpan="2" Grid.Column="0" HeightRequest="30" VerticalOptions="Center" HorizontalOptions="End">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Bimg_Tapped">
+                                </TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                    </Grid>
+
+
+
+
+
+                    <Button   Clicked="DoneBtn_Clicked"  x:Name="doneBtn" FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}" FontAttributes="Bold" Text="{strings:Translate done}" 
+                         TextColor="White" BackgroundColor="#FE1F78" HorizontalOptions="CenterAndExpand"
+                      WidthRequest="210" BorderRadius="30" FontSize="Medium" VerticalOptions="StartAndExpand"/>
+
+                   
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

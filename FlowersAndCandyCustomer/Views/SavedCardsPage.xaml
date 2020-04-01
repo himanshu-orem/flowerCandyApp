@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             x:Class="FlowersAndCandyCustomer.Views.SavedCardsPage">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Image HeightRequest="30" WidthRequest="30" Source="ico_back.png"
+                   HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackImgTapped}"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="White" Text="{strings:Translate saved_Cards}"
+                  FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+
+            <Image HeightRequest="25" WidthRequest="25"
+                   HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"/>
+
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView HasUnevenRows="True" x:Name="savedCardList" ItemsSource="{Binding SavedCardList}" SelectionMode="None"
+                                    VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid x:Name="savedCardListItem" Padding="20,12">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Frame Grid.Row="0" Padding="0" CornerRadius="5" HorizontalOptions="Fill" HasShadow="False" BackgroundColor="#fe1f78">
+                                    <Grid Padding="15" RowSpacing="10" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="6*"/>
+                                            <ColumnDefinition Width="4*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Row="0" Grid.Column="1" Source="ico_delete_white.png" HeightRequest="25" WidthRequest="25" HorizontalOptions="End" VerticalOptions="Center">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Path=BindingContext.DeleteCardCommand, Source={x:Reference savedCardList}}" CommandParameter="{Binding Source={x:Reference savedCardListItem}, Path=BindingContext}"/>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+
+                                        <Label Grid.Row="1" Grid.ColumnSpan="2" Text="Card Number" FontSize="15" TextColor="White" HorizontalOptions="Start"/>
+                                        <Label Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding card_number}" FontSize="18" TextColor="White" HorizontalOptions="Start"/>
+
+                                        <Label Grid.Row="3" Grid.Column="0" Text="Card Expiry Date" FontSize="15" TextColor="White" HorizontalOptions="Start"/>
+                                        <Label Grid.Row="4" Grid.Column="0" Text="{Binding card_expiry_value}" FontSize="18" TextColor="White" HorizontalOptions="Start"/>
+
+                                        <Label Grid.Row="3" Grid.Column="1" Text="Card Holder Name" FontSize="15" TextColor="White" HorizontalOptions="Start"/>
+                                        <Label Grid.Row="4" Grid.Column="1" Text="{Binding card_holder_name}" FontSize="18" TextColor="White" HorizontalOptions="Start"/>
+
+                                        <Image Grid.Row="5" Grid.ColumnSpan="2" Source="{Binding card_type_image}" HeightRequest="30" HorizontalOptions="End" VerticalOptions="Center"/>
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

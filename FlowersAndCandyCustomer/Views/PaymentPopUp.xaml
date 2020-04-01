@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+       xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+             x:Class="FlowersAndCandyCustomer.Views.PaymentPopUp">
+    <StackLayout Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent"  Padding="15">
+        <Frame   HasShadow="false" CornerRadius="2" Padding="0"  OutlineColor="#D9D9D9"  BackgroundColor="White">
+            <ScrollView>
+
+
+                <StackLayout Spacing="0" x:Name="PaymentLayout" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+
+                    <StackLayout Spacing="15" Padding="0,0,0,0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                        <WebView HeightRequest="420" WidthRequest="1000" x:Name="payment"  Navigating="Payment_Navigating"  Navigated="payment_Navigated"/>
+
+                    </StackLayout>
+
+
+                    <!--<StackLayout Padding="15,0,15,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
+                        <StackLayout Padding="20">
+                        <Image HorizontalOptions="CenterAndExpand" Source="cards.png"  WidthRequest="130"></Image>
+                        </StackLayout>
+
+                        <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="0" Spacing="20">
+                       
+                        <StackLayout Orientation="Horizontal">
+                                <Image  x:Name="masterImg" Source="ico_round_checked.png" HeightRequest="20" WidthRequest="20"></Image>
+                                <Label FontSize="12" TextColor="Gray" Text="{strings:Translate MasterCard}" StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}"></Label>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer
+                     Tapped="master_Tapped"
+                    NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Image x:Name="visaImg" Source="ico_round_check.png" HeightRequest="20" WidthRequest="20"></Image>
+                                <Label FontSize="12" TextColor="Gray" Text="{strings:Translate VisaCard}" StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}"></Label>
+                                <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer
+                     Tapped="visa_Tapped"
+                    NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+
+                            </StackLayout>
+                        </StackLayout>
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                        <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate CardHolderName}" FontSize="12" HorizontalOptions="Start"/>
+                        <Entry  x:Name="holderTxt"  FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate Enterholdername}"
+                   PlaceholderColor="Gray" FontSize="14" TextColor="Black"/>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                        <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate CardNumber}" FontSize="12" HorizontalOptions="Start"/>
+                            <Entry x:Name="cardTxt" TextChanged="Handle_CardTextChanged"   FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate Entercardnumber}" Keyboard="Numeric"
+                   PlaceholderColor="Gray" FontSize="14" TextColor="Black"/>
+                    </StackLayout>
+
+                        
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate ExpiryMonth}" FontSize="12" HorizontalOptions="Start"/>
+                                <Picker x:Name="expireMonth_picker" Title="{strings:Translate ExpiryMonth}"  FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                    FontSize="14" TextColor="Black">
+                                    <Picker.Items>
+                                        <x:String>01</x:String>
+                                        <x:String>02</x:String>
+                                        <x:String>03</x:String>
+                                        <x:String>04</x:String>
+                                        <x:String>05</x:String>
+                                        <x:String>06</x:String>
+                                        <x:String>07</x:String>
+                                        <x:String>08</x:String>
+                                        <x:String>09</x:String>
+                                        <x:String>10</x:String>
+                                        <x:String>11</x:String>
+                                        <x:String>12</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate ExpiryYear}" FontSize="12" HorizontalOptions="Start"/>
+                                <Picker x:Name="expireYear_picker" Title="{strings:Translate ExpiryYear}"  FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                    FontSize="14" TextColor="Black"/>
+                        </StackLayout>
+                    </StackLayout>
+                        
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                        <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   TextColor="Gray" Margin="5,20,0,0" Text="CVV" FontSize="12" HorizontalOptions="Start"/>
+                            <Entry  x:Name="cvvTxt" TextChanged="Handle_CvvTextChanged"  FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate Entercvv1}" Keyboard="Numeric"
+                   PlaceholderColor="Gray" FontSize="14" TextColor="Black"/>
+                    </StackLayout>
+
+
+                </StackLayout>-->
+
+
+                    <StackLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"
+                                          Spacing="0">
+                        <Button Clicked="Pay_Clicked"  FontFamily="{x:Static adc:App_FontFamilies.PageTitles}"  BackgroundColor="#B8074E"
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"  
+                   TextColor="White" HorizontalOptions="FillAndExpand" Text="{strings:Translate cancel}"   FontSize="Medium" BorderRadius="0"/>
+                    </StackLayout>
+
+
+
+                </StackLayout>
+
+
+
+
+            </ScrollView>
+        </Frame>
+
+    </StackLayout>
+
+</pages:PopupPage>

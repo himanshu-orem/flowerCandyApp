@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+             xmlns:custom="clr-namespace:FlowersAndCandyCustomer.CustomControls"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             x:Class="FlowersAndCandyCustomer.Views.SignupPage">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="0">
+
+        <Image Source="close.png" WidthRequest="25" HeightRequest="25" Margin="20,20,0,0" HorizontalOptions="Start"
+               VerticalOptions="Center">
+               <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding loginCommand}"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                    </Image>
+                    
+        <StackLayout HorizontalOptions="FillAndExpand" Spacing="-6" VerticalOptions="StartAndExpand" Padding="30,15,30,20"
+                     BackgroundColor="Transparent">
+
+    <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+           StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+           HorizontalOptions="Start" Margin="0,15,0,0" HorizontalTextAlignment="Start" VerticalOptions="Start"
+
+           FontAttributes="Bold" FontSize="30" Text="{strings:Translate create_account}" TextColor="#444444"/>
+
+            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="firstNameLbl"
+                   TextColor="Gray" Margin="5,40,0,0" Text="{strings:Translate first_name}" FontSize="Medium" HorizontalOptions="Start"/>
+
+            <Entry Text="{Binding FirstName}" x:Name="firstNameTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate enter_first_name}"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+
+            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="lastNameLbl"
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate last_name}" FontSize="Medium" HorizontalOptions="Start"/>
+
+            <Entry Text="{Binding LastName}" x:Name="lastNameTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate enter_last_name}"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+
+                <Label IsVisible="False" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="emailLbl"
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate email}" FontSize="Medium" HorizontalOptions="Start"/>
+
+                    <Entry IsVisible="False" Text="{Binding Email}" x:Name="emailTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate enter_email}"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+
+
+                    <Label    FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="passwordLbl"
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate password}" FontSize="Medium" HorizontalOptions="Start"/>
+
+                    <Entry   Text="{Binding Password}" IsPassword="true" x:Name="passwordTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate enter_password}"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+
+
+                    <Label    FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="confirmPasswordLbl"
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate confirm_password}" FontSize="Medium" HorizontalOptions="Start"/>
+
+                    <Entry  Text="{Binding ConfirmPassword}" IsPassword="true" x:Name="confirmPasswordTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate enter_confirm_password}"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+
+
+                   <!--<Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="phoneNumberLbl"
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate phone_number}" FontSize="Medium" HorizontalOptions="Start"/>-->
+
+                   <!--<StackLayout Orientation="Horizontal" Padding="0" Spacing="5">
+
+
+                        <Picker  SelectedIndexChanged="PhoneCodePicker_SelectedIndexChanged" x:Name="phoneCodePicker" WidthRequest="60">
+                            --><!--<Picker.Items>
+                                <x:String>+966</x:String>
+                                <x:String>+92</x:String>
+                            </Picker.Items>--><!--
+                        </Picker>
+
+                        <Image Source="ico_drop_arrow.png" HeightRequest="13"
+                               WidthRequest="13" Margin="0,15,0,0" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+
+                        <Entry Text="{Binding PhoneNumber}" x:Name="phoneNumberTxt" TextChanged="txt_phone_TextChanged"
+                   FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="Start" 
+                   Placeholder="{strings:Translate enter_phone_number}" Keyboard="Numeric"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+                    </StackLayout>-->
+
+
+
+                    <StackLayout Margin="0,15,0,0" Orientation="Horizontal" Padding="0" Spacing="10">
+                        <StackLayout Orientation="Horizontal">
+                            <Image x:Name="customerImg" Source="ico_round_checked.png" HeightRequest="20" WidthRequest="20"></Image>
+                        <Label  TextColor="Gray" Text="{strings:Translate customer}" StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}"></Label>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer
+                     Tapped="customer_Tapped"
+                    NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image  x:Name="sellerImg" Source="ico_round_check.png" HeightRequest="20" WidthRequest="20"></Image>
+                        <Label  TextColor="Gray" Text="{strings:Translate seller}" StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}"></Label>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer
+                     Tapped="seller_Tapped"
+                    NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                        
+                    </StackLayout>
+
+
+
+                    <StackLayout IsVisible="False" x:Name="sellerLyt" Margin="0,8,0,0"  Orientation="Horizontal" Padding="0" Spacing="5" HorizontalOptions="FillAndExpand">
+
+
+                        <Picker  SelectedIndexChanged="SellerPicker_SelectedIndexChanged" Title="{strings:Translate sellerType}" ItemDisplayBinding="{Binding name}" HorizontalOptions="FillAndExpand" FontSize="16" x:Name="sellerPicker">
+                            
+                        </Picker>
+
+                        <Image Source="ico_drop_arrow.png" HeightRequest="13"
+                               WidthRequest="13" Margin="0,15,0,0" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+                    </StackLayout>
+
+
+
+
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start"
+                         Spacing="15" Padding="0,25,0,0">
+
+                       <Image Source="{Binding TermsCheckBox}" VerticalOptions="Center"
+                              HeightRequest="25" WidthRequest="25" HorizontalOptions="Start">
+                            <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding termsConditionsCommand}"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                        </Image>
+                        
+                 <Label StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" FontSize="Small" HorizontalOptions="StartAndExpand" VerticalOptions="Center">
+
+             <Label.FormattedText>
+                  <FormattedString>
+                   <Span Text="{strings:Translate agree_with_terms}" StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" ForegroundColor="Gray"/> 
+                   <Span Text="{strings:Translate terms_conditions}" StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" ForegroundColor="#444444" FontAttributes="Bold">
+                   <Span.GestureRecognizers>
+                  <TapGestureRecognizer Command="{Binding openTermsConditionsCommand}"></TapGestureRecognizer>     
+                  </Span.GestureRecognizers>
+                   </Span>
+                   <Span Text="{strings:Translate and}" StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" ForegroundColor="Gray"/>
+                   <Span Text="{strings:Translate privacy_policy}" ForegroundColor="#444444" StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" FontAttributes="Bold">
+                  <Span.GestureRecognizers>
+                  <TapGestureRecognizer Command="{Binding openPrivacyPolicyCommand}"></TapGestureRecognizer>     
+                  </Span.GestureRecognizers>
+                   </Span>
+                  </FormattedString>
+             </Label.FormattedText>
+                    </Label>
+                
+            </StackLayout>
+
+                    <Button Command="{Binding signUpCommand}" Margin="0,30,0,0" x:Name="signUpBtn" FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}" FontAttributes="Bold" Text="{strings:Translate sign_up}" 
+                         TextColor="White" BackgroundColor="#FE1F78" HorizontalOptions="CenterAndExpand"
+                      WidthRequest="210" BorderRadius="30" FontSize="Medium" VerticalOptions="StartAndExpand"/>
+
+                <!--<StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" VerticalOptions="Start"
+                         Spacing="-6" Margin="20,40,20,0">
+
+                         <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"
+                                TextColor="Gray" Text="{strings:Translate already_have_account}" 
+                                FontSize="16" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+
+                 <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}"
+           StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                        TextColor="#444444" FontAttributes="Bold" Text="{strings:Translate login}" 
+                                FontSize="16" Margin="10,0,0,0" HorizontalOptions="StartAndExpand" VerticalOptions="Center">
+                                <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding loginCommand}"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                    </Label>
+                
+            </StackLayout>-->
+
+            </StackLayout>
+                </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

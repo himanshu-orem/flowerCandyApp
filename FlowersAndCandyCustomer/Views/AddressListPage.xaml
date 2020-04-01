@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extended="clr-namespace:Xamarin.Forms.Extended;assembly=Xamarin.Forms.Extended.InfiniteScrolling"
+               xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             x:Class="FlowersAndCandyCustomer.Views.AddressListPage">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Image HeightRequest="30" WidthRequest="30" Source="ico_back.png"
+                   HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="back_Tapped"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="White" Text="{strings:Translate addressList}"
+                  FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+
+            <Image HeightRequest="25" WidthRequest="25"
+                   HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <ListView  BackgroundColor="#F2F2F2"  IsPullToRefreshEnabled="true"   Refreshing="AddressList_Refreshing"  ItemSelected="AddressList_ItemSelected"   SeparatorVisibility="None"   x:Name="addressList" ItemsSource="{Binding Items}" CachingStrategy="RecycleElement" HasUnevenRows="True">
+
+                    <ListView.Behaviors>
+                        <extended:InfiniteScrollBehavior IsLoadingMore="{Binding IsBusy}" />
+                    </ListView.Behaviors>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+
+                                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" 
+                                         Padding="2" BackgroundColor="#F2F2F2">
+
+                                    <Frame x:Name="Items" HasShadow="false" CornerRadius="0" Padding="10,0,0,0"   BackgroundColor="White"
+                                   HorizontalOptions="FillAndExpand" VerticalOptions="Start" OutlineColor="#D9D9D9">
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+                                            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                                                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+           StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+           HorizontalTextAlignment="Start" VerticalTextAlignment="Start"
+            FontSize="14" Text="{Binding full_address}" TextColor="Black"/>
+                                            </StackLayout>
+
+                                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand">
+
+                                                <Frame  VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand" Padding="5" HasShadow="False" OutlineColor="Transparent" BackgroundColor="Transparent">
+                                                    <StackLayout Spacing="10" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal">
+                                                        <Image Margin="0,4,0,0" BindingContext="{Binding id}" HeightRequest="25" WidthRequest="25" Source="editaddress.png">
+
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                     Tapped="edit_Tapped"  
+                                                         
+                    NumberOfTapsRequired="1" />
+                                                            </Image.GestureRecognizers>
+                                                        </Image>
+
+                                                        <Image  BindingContext="{Binding id}" HeightRequest="25" WidthRequest="25" Source="delete_address.png">
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                     Tapped="delete_Tapped"  
+                                                         
+                    NumberOfTapsRequired="1" />
+                                                            </Image.GestureRecognizers>
+                                                        </Image>
+                                                    </StackLayout>
+                                                </Frame>
+
+                                                <Frame VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" Padding="0" HasShadow="False" OutlineColor="Transparent" BackgroundColor="Transparent">
+                                                    <StackLayout   HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                                                        <Image HeightRequest="30" WidthRequest="30" Source="{Binding img}"></Image>
+                                                    </StackLayout>
+                                                </Frame>
+
+                                            </StackLayout>
+
+
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <ListView.Footer>
+                        <Grid Padding="6" IsVisible="{Binding IsBusy}">
+                            <!-- set the footer to have a zero height when invisible -->
+                            <Grid.Triggers>
+                                <Trigger TargetType="Grid" Property="IsVisible" Value="False">
+                                    <Setter Property="HeightRequest" Value="0" />
+                                </Trigger>
+                            </Grid.Triggers>
+                            <!-- the loading content -->
+                            <!--<Label Text="Loading..." TextColor="DeepPink" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />-->
+                            <!--<ActivityIndicator HeightRequest="20" WidthRequest="20" IsRunning="True" IsVisible="True" Color="Black" VerticalOptions="Center" HorizontalOptions="Center"></ActivityIndicator>-->
+                        </Grid>
+                    </ListView.Footer>
+
+                </ListView>
+
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="FillAndExpand" 
+                                         Margin="0" Padding="0,0,0,1">
+                <Button FontFamily="{x:Static adc:App_FontFamilies.PageTitles}"  BackgroundColor="#B8074E"
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   TextColor="White" HorizontalOptions="FillAndExpand" Text="{strings:Translate add_address}" Clicked="addAddress_Clicked" FontSize="Medium" BorderRadius="0"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

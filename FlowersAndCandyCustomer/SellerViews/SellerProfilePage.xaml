@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+              xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:ffTransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             x:Class="FlowersAndCandyCustomer.SellerViews.SellerProfilePage">
+    <ContentPage.Content>
+        <StackLayout Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                     Padding="0">
+
+            <BoxView HeightRequest="0.5" BackgroundColor="White" HorizontalOptions="FillAndExpand"/>
+
+            <StackLayout BackgroundColor="#FE1F78" Padding="0,20,0,20" HorizontalOptions="FillAndExpand"
+                         VerticalOptions="Start">
+
+
+                <ff:CachedImage CacheType="None" DownsampleHeight="200" x:Name="img" LoadingPlaceholder="user_placeholder.png" 
+                                                      VerticalOptions="Center" WidthRequest="100" HeightRequest="100" HorizontalOptions="Center"
+                                                 Aspect="Fill" >
+                    <ff:CachedImage.Transformations>
+                        <ffTransformations:CircleTransformation BorderSize="5" BorderHexColor="#FE1F78" />
+                    </ff:CachedImage.Transformations>
+                </ff:CachedImage>
+
+
+            </StackLayout>
+
+            <StackLayout Padding="10,0,10,0" BackgroundColor="White">
+                <ListView BackgroundColor="White" HorizontalOptions="FillAndExpand" 
+                 VerticalOptions="FillAndExpand"
+                               ItemsSource="{Binding ProfileList}" SelectedItem="{Binding ProfileItemSelected}"
+                   HasUnevenRows="True" SeparatorVisibility="Default" SeparatorColor="#C2C2C2">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout BackgroundColor="White" Padding="10">
+                                    <StackLayout BackgroundColor="White" Orientation="Horizontal" Padding="5,10,5,10">
+                                        <Image Source="{Binding Image}" HeightRequest="30" WidthRequest="30" HorizontalOptions="Start"/>
+
+                                        <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"
+                   TextColor="#444444" Margin="10,0,0,0" Text="{Binding Name}"
+                  FontSize="Medium" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+
+                                        <Image Source="ico_menu_arrow.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="End"/>
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

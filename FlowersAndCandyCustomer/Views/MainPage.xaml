@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+             xmlns:views="clr-namespace:FlowersAndCandyCustomer.Views"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             x:Class="FlowersAndCandyCustomer.Views.MainPage">
+
+              <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Image HeightRequest="30" WidthRequest="30" Source=""
+                   HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+            </Image>
+
+
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="White" Text="{Binding TitleText}"
+                  FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+
+            </StackLayout>
+
+            <Grid Margin="0,0,20,0" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+
+
+                <StackLayout Grid.Row="0" Grid.Column="0" Padding="0" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="Start" Spacing="10">
+
+                    <Image  x:Name="crtImg" HeightRequest="28" WidthRequest="28" Source="cart_ic.png"
+                   HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand">
+
+                    </Image>
+
+                </StackLayout>
+
+                <StackLayout Margin="5,0,0,5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                    <Label   FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Red" x:Name="cartCountLbl"   HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                  FontSize="10"  />
+                </StackLayout>
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Cart_Tapped"></TapGestureRecognizer>
+                </Grid.GestureRecognizers>
+            </Grid>
+            
+            
+            
+            
+            
+
+        </StackLayout>
+
+
+    </NavigationPage.TitleView>
+    
+        <ContentPage.Content>
+        <StackLayout Spacing="0" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0">
+
+        <ContentView x:Name="homeView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="{Binding HomeVisible}">
+                <ContentView.Content>
+                    <views:ShopListPage/>
+                    </ContentView.Content>
+            </ContentView>
+
+
+            <ContentView x:Name="ordersView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="{Binding OrderVisible}">
+                <ContentView.Content>
+                    <views:CustomerOrders/>
+                </ContentView.Content>
+            </ContentView>
+
+
+
+            <ContentView x:Name="profileView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="{Binding ProfileVisible}">
+                <ContentView.Content>
+                    <views:ProfileContentView/>
+                    </ContentView.Content>
+            </ContentView>
+           
+
+            
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                         BackgroundColor="White" VerticalOptions="EndAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand" x:Name="firstLayout" Padding="0,5,0,0" BackgroundColor="White">
+                <Image Source="{Binding HomeImage}" HeightRequest="30" WidthRequest="30"></Image>
+                     <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"
+                   TextColor="{Binding HomeTextColor}" Text="{strings:Translate home}" FontSize="Small" HorizontalOptions="Center"/>
+                   <BoxView BackgroundColor="#FE1F78" HeightRequest="3" IsVisible="{Binding HomeVisible}"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding tappedHomeViewCommand}"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand"  x:Name="secondLayout" Padding="0,5,0,0" BackgroundColor="White">
+                <Image Source="{Binding OrderImage}" HeightRequest="30" WidthRequest="30"></Image>
+                     <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"
+                   TextColor="{Binding OrderTextColor}" Text="{strings:Translate orders}" FontSize="Small" HorizontalOptions="Center"/>
+                   <BoxView BackgroundColor="#FE1F78" HeightRequest="3" IsVisible="{Binding OrderVisible}"/>
+                   <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding tappedOrderViewCommand}"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand"  x:Name="thirdLayout" Padding="0,5,0,0" BackgroundColor="White">
+                <Image Source="{Binding ProfileImage}" HeightRequest="30" WidthRequest="30"></Image>
+                     <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"
+                   TextColor="{Binding ProfileTextColor}" Text="{strings:Translate profile}" FontSize="Small" HorizontalOptions="Center"/>
+                   <BoxView BackgroundColor="#FE1F78" HeightRequest="3" IsVisible="{Binding ProfileVisible}"/>
+                   <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding tappedProfileViewCommand}"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                 
+            </StackLayout>
+        </StackLayout>
+        </ContentPage.Content>
+</ContentPage>

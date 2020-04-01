@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+              xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             xmlns:extended="clr-namespace:Xamarin.Forms.Extended;assembly=Xamarin.Forms.Extended.InfiniteScrolling"
+             x:Class="FlowersAndCandyCustomer.Views.CustomerOrders">
+    <ContentView.Content>
+        <StackLayout   Spacing="0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout BackgroundColor="White" HorizontalOptions="FillAndExpand" 
+                                         Padding="10" Orientation="Horizontal">
+                <Button   FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"   WidthRequest="140" HeightRequest="38" BackgroundColor="#FE1F78"
+                   TextColor="White" Text="{strings:Translate currentOrdersBtn}" x:Name="currentOrdersBtn" Clicked="CurrentOrdersBtn_Clicked" HorizontalOptions="FillAndExpand" FontSize="16" BorderRadius="30"/>
+
+                <Button FontFamily="{x:Static adc:App_FontFamilies.PageTitles}"  BackgroundColor="#FFEFF5"
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}" x:Name="previousOrdersBtn" Clicked="PreviousOrdersBtn_Clicked"   WidthRequest="140" HeightRequest="38"
+                   TextColor="#A3989C" HorizontalOptions="FillAndExpand" Text="{strings:Translate previousOrdersBtn}"  FontSize="16" BorderRadius="30"/>
+            </StackLayout>
+
+
+
+            <ListView IsVisible="True"  BackgroundColor="#F2F2F2"  IsPullToRefreshEnabled="true"   Refreshing="CustomerOrders_Refreshing"  ItemSelected="CustomerOrders_ItemSelected"   SeparatorVisibility="None"   x:Name="customerOrders" ItemsSource="{Binding Items}" CachingStrategy="RecycleElement" HasUnevenRows="True">
+
+                <ListView.Behaviors>
+                    <extended:InfiniteScrollBehavior IsLoadingMore="{Binding IsBusy}" />
+                </ListView.Behaviors>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+
+                            <StackLayout   Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                <Frame Padding="10" HasShadow="False" CornerRadius="4" BackgroundColor="White" OutlineColor="#D9D9D9">
+                                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                            <StackLayout Spacing="0" Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="#737373" Text="{strings:Translate orderNumber}"
+                  FontSize="12"/>
+                                                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Black" Text="{Binding id}"
+                  FontSize="12"/>
+                                            </StackLayout>
+                                            <StackLayout Spacing="0" Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                                                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="#737373" Text="{strings:Translate totalAmount}"
+                  FontSize="12"/>
+                                                <StackLayout Spacing="1" Orientation="Horizontal">
+                                                    <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Black" Text="Riyal"
+                  FontSize="12"/>
+                                                    <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Black" Text="{Binding total_cost}"
+                  FontSize="12"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+                                            <StackLayout Spacing="0" Orientation="Vertical">
+                                            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="#737373" Text="{strings:Translate orderOn}"
+                  FontSize="12"/>
+                                            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Black" Text="{Binding created}"
+                  FontSize="12"/>
+                                        </StackLayout>
+
+                                        <StackLayout Margin="0,0,20,0" Spacing="0" Orientation="Vertical"  HorizontalOptions="EndAndExpand">
+
+
+                                            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="#737373" Text="{strings:Translate paymentBy}"
+                  FontSize="12"/>
+                                            <StackLayout Spacing="1" Orientation="Horizontal">
+
+                                                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Black" Text="{Binding payment_method}"
+                  FontSize="12"/>
+
+
+
+                                            </StackLayout>
+                                        </StackLayout>
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </Frame>
+
+                            </StackLayout>
+
+
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+                <ListView.Footer>
+                    <Grid Padding="6" IsVisible="{Binding IsBusy}">
+                        <!-- set the footer to have a zero height when invisible -->
+                        <Grid.Triggers>
+                            <Trigger TargetType="Grid" Property="IsVisible" Value="False">
+                                <Setter Property="HeightRequest" Value="0" />
+                            </Trigger>
+                        </Grid.Triggers>
+                        <!-- the loading content -->
+                        <!--<Label Text="Loading..." TextColor="DeepPink" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />-->
+                        <ActivityIndicator HeightRequest="20" WidthRequest="20" IsRunning="True" IsVisible="True" Color="Black" VerticalOptions="Center" HorizontalOptions="Center"></ActivityIndicator>
+                    </Grid>
+                </ListView.Footer>
+
+            </ListView>
+
+
+
+            <ListView IsVisible="False"  BackgroundColor="#F2F2F2"  IsPullToRefreshEnabled="true"   Refreshing="PcustomerOrders_Refreshing"  ItemSelected="PcustomerOrders_ItemSelected"   SeparatorVisibility="None"   x:Name="PcustomerOrders" ItemsSource="{Binding Items}" CachingStrategy="RecycleElement" HasUnevenRows="True">
+
+                <ListView.Behaviors>
+                    <extended:InfiniteScrollBehavior IsLoadingMore="{Binding IsBusy}" />
+                </ListView.Behaviors>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+
+                            <StackLayout   Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                <Frame Padding="10" HasShadow="False" CornerRadius="4" BackgroundColor="White" OutlineColor="#D9D9D9">
+                                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                            <StackLayout Spacing="0" Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="#737373" Text="{strings:Translate orderNumber}"
+                  FontSize="12"/>
+                                                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Black" Text="{Binding id}"
+                  FontSize="12"/>
+                                            </StackLayout>
+                                            <StackLayout Spacing="0" Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                                                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="#737373" Text="{strings:Translate totalAmount}"
+                  FontSize="12"/>
+                                                <StackLayout Spacing="1" Orientation="Horizontal">
+                                                    <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Black" Text="Riyal"
+                  FontSize="12"/>
+                                                    <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Black" Text="{Binding total_cost}"
+                  FontSize="12"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+                                            <StackLayout Spacing="0" Orientation="Vertical">
+                                            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="#737373" Text="{strings:Translate orderOn}"
+                  FontSize="12"/>
+                                            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Black" Text="{Binding created}"
+                  FontSize="12"/>
+                                        </StackLayout>
+
+                                        <StackLayout Margin="0,0,20,0" Spacing="0" Orientation="Vertical"  HorizontalOptions="EndAndExpand">
+
+
+                                            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="#737373" Text="{strings:Translate paymentBy}"
+                  FontSize="12"/>
+                                            <StackLayout Spacing="1" Orientation="Horizontal">
+
+                                                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Black" Text="{Binding payment_method}"
+                  FontSize="12"/>
+
+
+
+                                            </StackLayout>
+                                        </StackLayout>
+
+
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+
+                            </StackLayout>
+
+
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+                <ListView.Footer>
+                    <Grid Padding="6" IsVisible="{Binding IsBusy}">
+                        <!-- set the footer to have a zero height when invisible -->
+                        <Grid.Triggers>
+                            <Trigger TargetType="Grid" Property="IsVisible" Value="False">
+                                <Setter Property="HeightRequest" Value="0" />
+                            </Trigger>
+                        </Grid.Triggers>
+                        <!-- the loading content -->
+                        <!--<Label Text="Loading..." TextColor="DeepPink" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />-->
+                        <ActivityIndicator HeightRequest="20" WidthRequest="20" IsRunning="True" IsVisible="True" Color="Black" VerticalOptions="Center" HorizontalOptions="Center"></ActivityIndicator>
+                    </Grid>
+                </ListView.Footer>
+
+            </ListView>
+
+
+
+
+
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

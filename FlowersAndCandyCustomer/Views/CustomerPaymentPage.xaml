@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             x:Class="FlowersAndCandyCustomer.Views.CustomerPaymentPage">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Image HeightRequest="30" WidthRequest="30" Source="ico_back.png"
+                   HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="back_Tapped"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="White" Text="{strings:Translate payment}"
+                  FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+
+            <Image HeightRequest="25" WidthRequest="25"
+                   HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <ScrollView>
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+
+                    <StackLayout BackgroundColor="White" Padding="12,10,20,0">
+                <Label   FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Black" Text="{strings:Translate productDetails}"
+                   FontSize="16" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+
+                 
+                    <StackLayout Margin="0,-10,0,0" BackgroundColor="White" x:Name="productLyt" Padding="10,0,10,0" Spacing="1" HorizontalOptions="FillAndExpand">
+
+                    <Grid BackgroundColor="White" Padding="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout x:Name="productnameLbl" Grid.Row="0" Grid.Column="0" Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                           
+                        </StackLayout>
+
+                        <StackLayout  x:Name="qtylyt" Grid.Row="0" Grid.Column="1"  Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                           
+                        </StackLayout>
+                        <StackLayout x:Name="prilyt"  Grid.Row="0" Grid.Column="2" Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                            
+                        </StackLayout>
+
+                    </Grid>
+
+                        <StackLayout Padding="5,0,14,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <StackLayout HorizontalOptions="StartAndExpand">
+                                <Label   FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Gray" Text="{strings:Translate total}"
+                   FontSize="14" />
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="EndAndExpand">
+                                <Label   FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="#B8074E"  x:Name="totalPrice"
+                   FontSize="14" />
+                            </StackLayout>
+                        </StackLayout>
+                </StackLayout>
+
+
+                    <BoxView  
+               HorizontalOptions="Fill"
+               HeightRequest="0.5" 
+               Color="Silver"/>
+
+
+                    <StackLayout BackgroundColor="White" Padding="12,5,20,0">
+                        <Label   FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Black" Text="{strings:Translate delivery_address}"
+                   FontSize="16" />
+                    </StackLayout>
+
+                    <StackLayout BackgroundColor="White" Padding="12,2,20,2">
+                        <Label   FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Gray" x:Name="deliveryAddress"
+                   FontSize="12" />
+                    </StackLayout>
+
+                    <BoxView  
+               HorizontalOptions="Fill"
+               HeightRequest="0.5" 
+               Color="Silver"/>
+
+
+                    <StackLayout Orientation="Horizontal" BackgroundColor="White" Padding="12,10,20,10">
+                        <Label   FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Black" Text="{strings:Translate paymentBy}"
+                   FontSize="16" />
+
+                        <StackLayout Spacing="10" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                        <Image  x:Name="payImg" HeightRequest="25" WidthRequest="25" Source="cash_pay.png"></Image>
+                        <Label x:Name="payLbl" VerticalTextAlignment="Center" TextColor="Black" Text="{strings:Translate cash}" StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}"></Label>
+
+                            <Label   FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" VerticalTextAlignment="Center" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="#B8074E" Text="{strings:Translate change}"
+                   FontSize="14">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="changePayment_Tapped"></TapGestureRecognizer>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <BoxView  
+               HorizontalOptions="Fill"
+               HeightRequest="0.5" 
+               Color="Silver"/>
+
+
+                    <StackLayout VerticalOptions="CenterAndExpand" Orientation="Horizontal" BackgroundColor="White" Padding="12,10,20,10">
+                        <Label   FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="Black" Text="{strings:Translate orderpickbyself}" VerticalOptions="CenterAndExpand"
+                   FontSize="16" />
+                        <Switch HorizontalOptions="EndAndExpand" x:Name="selfToggel"  Toggled="SelfToggel_Toggled"></Switch>
+                    </StackLayout>
+
+                    <BoxView  
+               HorizontalOptions="Fill"
+               HeightRequest="0.5" 
+               Color="Silver"/>
+
+
+
+
+                </StackLayout>
+        </ScrollView>
+
+            <Picker IsVisible="False" SelectedIndexChanged="PickerPayment_SelectedIndexChanged" x:Name="pickerPayment">
+            </Picker>
+
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"
+                                         Margin="0" Padding="0,0,0,1">
+
+                
+
+
+
+                <Button FontFamily="{x:Static adc:App_FontFamilies.PageTitles}"  BackgroundColor="#B8074E"
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   TextColor="White" HorizontalOptions="FillAndExpand" Text="{strings:Translate pay}" Clicked="Pay_Clicked" FontSize="Medium" BorderRadius="0"/>
+        </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,883 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about_us" xml:space="preserve">
+    <value>معلومات عنا</value>
+  </data>
+  <data name="accept" xml:space="preserve">
+    <value>قبول</value>
+  </data>
+  <data name="addAddon" xml:space="preserve">
+    <value>أضف الملحق</value>
+  </data>
+  <data name="addmore" xml:space="preserve">
+    <value>أضف المزيد</value>
+  </data>
+  <data name="contact_us" xml:space="preserve">
+    <value>اتصل بنا
+</value>
+  </data>
+  <data name="addnote" xml:space="preserve">
+    <value>اضف ملاحظة</value>
+  </data>
+  <data name="addonName" xml:space="preserve">
+    <value>أضف على الاسم</value>
+  </data>
+  <data name="addonLPrice" xml:space="preserve">
+    <value>سعر المنتج كبير</value>
+  </data>
+  <data name="addonQty" xml:space="preserve">
+    <value>كمية</value>
+  </data>
+  <data name="addons" xml:space="preserve">
+    <value>إضافة إضافات</value>
+  </data>
+  <data name="addProduct" xml:space="preserve">
+    <value>أضف منتج</value>
+  </data>
+  <data name="address" xml:space="preserve">
+    <value>عنوان</value>
+  </data>
+  <data name="addressList" xml:space="preserve">
+    <value>عنوان العميل</value>
+  </data>
+  <data name="addShop" xml:space="preserve">
+    <value>أضف متجر</value>
+  </data>
+  <data name="addToCart" xml:space="preserve">
+    <value>أضف إلى السلة</value>
+  </data>
+  <data name="addtocart_text" xml:space="preserve">
+    <value>هل أنت متأكد أنك تريد إضافته إلى سلة التسوق؟</value>
+  </data>
+  <data name="add_address" xml:space="preserve">
+    <value>اضف عنوان</value>
+  </data>
+  <data name="add_delivery_address" xml:space="preserve">
+    <value>إضافة عنوان التسليم</value>
+  </data>
+  <data name="add_order" xml:space="preserve">
+    <value>أضف طلب</value>
+  </data>
+  <data name="agree_with_terms" xml:space="preserve">
+    <value>لقد قرأت و أتفق مع</value>
+  </data>
+  <data name="already_have_account" xml:space="preserve">
+    <value>هل لديك حساب؟</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value> و</value>
+  </data>
+  <data name="buy_now" xml:space="preserve">
+    <value>اشتري الآن</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="candy" xml:space="preserve">
+    <value>حلويات</value>
+  </data>
+  <data name="card" xml:space="preserve">
+    <value>بطاقة</value>
+  </data>
+  <data name="cartPage" xml:space="preserve">
+    <value>عربتك</value>
+  </data>
+  <data name="cash" xml:space="preserve">
+    <value>السيولة النقدية</value>
+  </data>
+  <data name="change_password" xml:space="preserve">
+    <value>غير كلمة السر</value>
+  </data>
+  <data name="choose_from_gallery" xml:space="preserve">
+    <value>اختر من المعرض</value>
+  </data>
+  <data name="choose_image" xml:space="preserve">
+    <value>اختر صورة</value>
+  </data>
+  <data name="city" xml:space="preserve">
+    <value>مدينة</value>
+  </data>
+  <data name="closeApp" xml:space="preserve">
+    <value>هل أنت متأكد من أنك تريد إغلاق التطبيق؟</value>
+  </data>
+  <data name="codeSendTo" xml:space="preserve">
+    <value>أدخل رمز التحقق</value>
+  </data>
+  <data name="coffee_juice" xml:space="preserve">
+    <value>قهوة وعصير</value>
+  </data>
+  <data name="communicationNumber" xml:space="preserve">
+    <value>رقم الاتصال</value>
+  </data>
+  <data name="companyName" xml:space="preserve">
+    <value>اسم الشركة</value>
+  </data>
+  <data name="confirm_password" xml:space="preserve">
+    <value>تأكيد كلمة المرور</value>
+  </data>
+  <data name="connection_failed" xml:space="preserve">
+    <value>فشل الاتصال</value>
+  </data>
+  <data name="copy_civil_register" xml:space="preserve">
+    <value>نسخة من السجل المدني (نسخة من الإقامة لغير السعوديين وجواز السفر)</value>
+  </data>
+  <data name="country" xml:space="preserve">
+    <value>بلد</value>
+  </data>
+  <data name="country_code" xml:space="preserve">
+    <value>الرقم الدولي</value>
+  </data>
+  <data name="createOrder" xml:space="preserve">
+    <value>هل أنت متأكد أنك تريد القيام بطلب؟</value>
+  </data>
+  <data name="create_account" xml:space="preserve">
+    <value>أنشئ حسابك</value>
+  </data>
+  <data name="currentOrdersBtn" xml:space="preserve">
+    <value>الطلبات الحالية</value>
+  </data>
+  <data name="current_old_password_matched_validation" xml:space="preserve">
+    <value>كلمة المرور الحالية والجديدة لا يمكن أن تكون هي نفسها.</value>
+  </data>
+  <data name="current_password" xml:space="preserve">
+    <value>كلمة المرور الحالي</value>
+  </data>
+  <data name="customer" xml:space="preserve">
+    <value>زبون</value>
+  </data>
+  <data name="customerAddressDetails" xml:space="preserve">
+    <value>تفاصيل العنوان</value>
+  </data>
+  <data name="deleteAddressMsg" xml:space="preserve">
+    <value>هل أنت متأكد أنك تريد حذف العنوان؟</value>
+  </data>
+  <data name="deleteSellerProductMsg" xml:space="preserve">
+    <value>هل أنت متأكد أنك تريد حذف المنتج؟</value>
+  </data>
+  <data name="deliveryManagement" xml:space="preserve">
+    <value>نظام إدارة التسليم</value>
+  </data>
+  <data name="delivery_fee" xml:space="preserve">
+    <value>رسوم التوصيل</value>
+  </data>
+  <data name="DictanceFee" xml:space="preserve">
+    <value>رسوم الإملاء</value>
+  </data>
+  <data name="done" xml:space="preserve">
+    <value>فعله</value>
+  </data>
+  <data name="driver" xml:space="preserve">
+    <value>سائق</value>
+  </data>
+  <data name="editsellerproduct" xml:space="preserve">
+    <value>تحرير المنتج</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="emptyCart" xml:space="preserve">
+    <value>عربة التسوق فارغة</value>
+  </data>
+  <data name="enteraddonName" xml:space="preserve">
+    <value>أدخل إضافة على الاسم</value>
+  </data>
+  <data name="enteraddonPrice" xml:space="preserve">
+    <value>أدخل أضف على السعر</value>
+  </data>
+  <data name="enteraddonQty" xml:space="preserve">
+    <value>أدخل إضافة على الكمية</value>
+  </data>
+  <data name="enterCompanyName" xml:space="preserve">
+    <value>أدخل اسم الشركة</value>
+  </data>
+  <data name="enterLicenceNumber" xml:space="preserve">
+    <value>أدخل رقم الترخيص</value>
+  </data>
+  <data name="enterPhone" xml:space="preserve">
+    <value>أدخل رقم الهاتف</value>
+  </data>
+  <data name="enterProducrPrice" xml:space="preserve">
+    <value>أدخل سعر المنتج</value>
+  </data>
+  <data name="enterProductDetail" xml:space="preserve">
+    <value>أدخل تفاصيل المنتج</value>
+  </data>
+  <data name="enterProductName" xml:space="preserve">
+    <value>أدخل اسم المنتج</value>
+  </data>
+  <data name="enterProductQuantity" xml:space="preserve">
+    <value>أدخل كمية المنتج</value>
+  </data>
+  <data name="enterShopAddress" xml:space="preserve">
+    <value>أدخل عنوان المحل</value>
+  </data>
+  <data name="enter_address" xml:space="preserve">
+    <value>أدخل العنوان</value>
+  </data>
+  <data name="enter_city" xml:space="preserve">
+    <value>أدخل المدينة</value>
+  </data>
+  <data name="enter_confirm_password" xml:space="preserve">
+    <value>أدخل تأكيد كلمة المرور</value>
+  </data>
+  <data name="enter_country" xml:space="preserve">
+    <value>اختر البلد</value>
+  </data>
+  <data name="enter_current_password" xml:space="preserve">
+    <value>إدخل كلمة السر الحالية</value>
+  </data>
+  <data name="enter_current_password_validation" xml:space="preserve">
+    <value>الرجاء إدخال كلمة المرور الحالية</value>
+  </data>
+  <data name="enter_email" xml:space="preserve">
+    <value>أدخل البريد الإلكتروني</value>
+  </data>
+  <data name="enter_email_validation" xml:space="preserve">
+    <value>الرجاء إدخال البريد الإلكتروني</value>
+  </data>
+  <data name="enter_first_name" xml:space="preserve">
+    <value>أدخل الاسم الأول</value>
+  </data>
+  <data name="enter_first_name_validation" xml:space="preserve">
+    <value>الرجاء إدخال الاسم الأول</value>
+  </data>
+  <data name="enter_full_name" xml:space="preserve">
+    <value>أدخل الاسم الكامل</value>
+  </data>
+  <data name="enter_landmark" xml:space="preserve">
+    <value>أدخل اسم المنتج</value>
+  </data>
+  <data name="enter_last_name" xml:space="preserve">
+    <value>إدخال اسم آخر</value>
+  </data>
+  <data name="enter_name" xml:space="preserve">
+    <value>أدخل الاسم</value>
+  </data>
+  <data name="enter_name_validation" xml:space="preserve">
+    <value>من فضلك ادخل الاسم</value>
+  </data>
+  <data name="enter_new_password" xml:space="preserve">
+    <value>أدخل كلمة مرور جديدة</value>
+  </data>
+  <data name="enter_new_password_validation" xml:space="preserve">
+    <value>الرجاء إدخال كلمة مرور جديدة</value>
+  </data>
+  <data name="enter_password" xml:space="preserve">
+    <value>أدخل كلمة المرور</value>
+  </data>
+  <data name="enter_password_validation" xml:space="preserve">
+    <value>من فضلك أدخل كلمة المرور</value>
+  </data>
+  <data name="enter_phone_number" xml:space="preserve">
+    <value>أدخل رقم الهاتف</value>
+  </data>
+  <data name="enter_phone_number_validation" xml:space="preserve">
+    <value>الرجاء إدخال رقم الهاتف</value>
+  </data>
+  <data name="enter_prepare_time" xml:space="preserve">
+    <value>أدخل الوقت في دقيقة</value>
+  </data>
+  <data name="enter_state" xml:space="preserve">
+    <value>إدخال الدولة</value>
+  </data>
+  <data name="enter_valid_email_validation" xml:space="preserve">
+    <value>الرجاء إدخال بريد إلكتروني صحيح</value>
+  </data>
+  <data name="enter_zipcode" xml:space="preserve">
+    <value>أدخل الرمز البريدي</value>
+  </data>
+  <data name="first_name" xml:space="preserve">
+    <value>الاسم الاول</value>
+  </data>
+  <data name="flowers" xml:space="preserve">
+    <value>زهور</value>
+  </data>
+  <data name="flowers_candy" xml:space="preserve">
+    <value>Flower&amp;Candy</value>
+  </data>
+  <data name="flower_listing" xml:space="preserve">
+    <value>قائمة الزهور</value>
+  </data>
+  <data name="forgot_password" xml:space="preserve">
+    <value>هل نسيت كلمة المرور؟</value>
+  </data>
+  <data name="forgot_password_text" xml:space="preserve">
+    <value>أدخل لك الهاتف وسنرسل لك رقمًا تسمح لك بإعادة تعيين كلمة المرور الخاصة بك.</value>
+  </data>
+  <data name="forgot_your_password" xml:space="preserve">
+    <value>نسيت رقمك السري؟</value>
+  </data>
+  <data name="full_name" xml:space="preserve">
+    <value>الاسم الكامل</value>
+  </data>
+  <data name="home" xml:space="preserve">
+    <value>الصفحة الرئيسية</value>
+  </data>
+  <data name="internet_failed_message" xml:space="preserve">
+    <value>حدث خطأ أثناء محاولة الاتصال. يرجى التحقق من الإنترنت الخاص بك والمحاولة مرة أخرى.</value>
+  </data>
+  <data name="landmark" xml:space="preserve">
+    <value>معلم معروف</value>
+  </data>
+  <data name="last_name" xml:space="preserve">
+    <value>الكنية</value>
+  </data>
+  <data name="licenceNumber" xml:space="preserve">
+    <value>رقم الرخصة</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="loginfirst" xml:space="preserve">
+    <value>الرجاء تسجيل الدخول أولا</value>
+  </data>
+  <data name="login_text" xml:space="preserve">
+    <value>Flower&amp;Candy</value>
+  </data>
+  <data name="logout" xml:space="preserve">
+    <value>الخروج</value>
+  </data>
+  <data name="logout_text" xml:space="preserve">
+    <value>هل أنت متأكد أنك تريد تسجيل الخروج؟</value>
+  </data>
+  <data name="minute" xml:space="preserve">
+    <value>دقيقة تحضير الوقت</value>
+  </data>
+  <data name="more" xml:space="preserve">
+    <value>أكثر من</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>اسم</value>
+  </data>
+  <data name="new_password" xml:space="preserve">
+    <value>كلمة السر الجديدة</value>
+  </data>
+  <data name="next" xml:space="preserve">
+    <value>التالى</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>لا</value>
+  </data>
+  <data name="noteDetails" xml:space="preserve">
+    <value>ملاحظة التفاصيل</value>
+  </data>
+  <data name="noteFor" xml:space="preserve">
+    <value>ملاحظة ل</value>
+  </data>
+  <data name="no_account" xml:space="preserve">
+    <value>ليس لديك حساب؟</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>حسنا</value>
+  </data>
+  <data name="orderDetails" xml:space="preserve">
+    <value>تفاصيل الطلب</value>
+  </data>
+  <data name="orderNumber" xml:space="preserve">
+    <value>رقم الطلب</value>
+  </data>
+  <data name="orderOn" xml:space="preserve">
+    <value>الطلب على</value>
+  </data>
+  <data name="orders" xml:space="preserve">
+    <value>الطلبات</value>
+  </data>
+  <data name="orderStatus" xml:space="preserve">
+    <value>حالة الطلب</value>
+  </data>
+  <data name="otpVerification" xml:space="preserve">
+    <value>التحقق من كلمة المرور</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>كلمه السر</value>
+  </data>
+  <data name="password_confirm_password_mismatch_validation" xml:space="preserve">
+    <value>كلمة المرور وتأكيد كلمة المرور غير متطابقة</value>
+  </data>
+  <data name="pay" xml:space="preserve">
+    <value>شراء</value>
+  </data>
+  <data name="payment" xml:space="preserve">
+    <value>دفع</value>
+  </data>
+  <data name="paymentBy" xml:space="preserve">
+    <value>الدفع بواسطة</value>
+  </data>
+  <data name="phoneNumber" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
+  <data name="phone_number" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
+  <data name="please_enter_address_validation" xml:space="preserve">
+    <value>الرجاء إدخال العنوان</value>
+  </data>
+  <data name="please_enter_city_validation" xml:space="preserve">
+    <value>من فضلك ادخل المدينة</value>
+  </data>
+  <data name="please_enter_country_validation" xml:space="preserve">
+    <value>الرجاء إدخال البلد</value>
+  </data>
+  <data name="please_enter_full_name_validation" xml:space="preserve">
+    <value>الرجاء إدخال الاسم الكامل</value>
+  </data>
+  <data name="please_enter_landmark_validation" xml:space="preserve">
+    <value>الرجاء إدخال لاندمارك</value>
+  </data>
+  <data name="please_enter_state_validation" xml:space="preserve">
+    <value>الرجاء إدخال الدولة</value>
+  </data>
+  <data name="please_enter_zipcode_validation" xml:space="preserve">
+    <value>الرجاء إدخال الرمز البريدي</value>
+  </data>
+  <data name="preferred_for_you" xml:space="preserve">
+    <value>المفضل لك</value>
+  </data>
+  <data name="prepare_time" xml:space="preserve">
+    <value>تحديد الوقت</value>
+  </data>
+  <data name="previousOrdersBtn" xml:space="preserve">
+    <value>الطلبات السابقة</value>
+  </data>
+  <data name="privacy_policy" xml:space="preserve">
+    <value> سياسة الخصوصية</value>
+  </data>
+  <data name="productDetail" xml:space="preserve">
+    <value>تفاصيل المنتج</value>
+  </data>
+  <data name="productDetails" xml:space="preserve">
+    <value>تفاصيل المنتجات</value>
+  </data>
+  <data name="productive_families" xml:space="preserve">
+    <value>الأسر المنتجة</value>
+  </data>
+  <data name="productName" xml:space="preserve">
+    <value>اسم المنتج</value>
+  </data>
+  <data name="productPrice" xml:space="preserve">
+    <value>سعر المنتج</value>
+  </data>
+  <data name="productquantity" xml:space="preserve">
+    <value>كمية المنتج</value>
+  </data>
+  <data name="products" xml:space="preserve">
+    <value>منتجات</value>
+  </data>
+  <data name="profile" xml:space="preserve">
+    <value>الملف الشخصي</value>
+  </data>
+  <data name="profile_settings" xml:space="preserve">
+    <value>إعدادات الملف الشخصي</value>
+  </data>
+  <data name="registerphone" xml:space="preserve">
+    <value>تسجيل الهاتف</value>
+  </data>
+  <data name="reject" xml:space="preserve">
+    <value>رفض</value>
+  </data>
+  <data name="resendDone" xml:space="preserve">
+    <value>لم تحصل على رمز التحقق؟ إعادة إرسال</value>
+  </data>
+  <data name="searchAddress" xml:space="preserve">
+    <value>بحث العنوان</value>
+  </data>
+  <data name="selectCountry" xml:space="preserve">
+    <value>اختر كود البلد</value>
+  </data>
+  <data name="selectDeliveryAddress" xml:space="preserve">
+    <value>حدد عنوان التسليم</value>
+  </data>
+  <data name="seller" xml:space="preserve">
+    <value>تاجر</value>
+  </data>
+  <data name="sellerType" xml:space="preserve">
+    <value>اختر نوع البائع</value>
+  </data>
+  <data name="send" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
+  <data name="sign_up" xml:space="preserve">
+    <value>سجل</value>
+  </data>
+  <data name="state" xml:space="preserve">
+    <value>حالة</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>تأكيد</value>
+  </data>
+  <data name="take_picture" xml:space="preserve">
+    <value>التقاط صورة</value>
+  </data>
+  <data name="terms_conditions" xml:space="preserve">
+    <value>البنود و الظروف</value>
+  </data>
+  <data name="terms_conditions_validation" xml:space="preserve">
+    <value>يرجى الموافقة على الشروط والأحكام</value>
+  </data>
+  <data name="total" xml:space="preserve">
+    <value>مجموع</value>
+  </data>
+  <data name="totalAmount" xml:space="preserve">
+    <value>المبلغ الإجمالي</value>
+  </data>
+  <data name="total_package_price" xml:space="preserve">
+    <value>إجمالي المبلغ المطلوب</value>
+  </data>
+  <data name="tracking" xml:space="preserve">
+    <value>ترتيب المسار</value>
+  </data>
+  <data name="uploadCompanyLogo" xml:space="preserve">
+    <value>تحميل شعار الشركة</value>
+  </data>
+  <data name="uploadProductImage" xml:space="preserve">
+    <value>تحميل صورة المنتج</value>
+  </data>
+  <data name="vehicle_from" xml:space="preserve">
+    <value>نسخة من نموذج السيارة</value>
+  </data>
+  <data name="vehicle_image" xml:space="preserve">
+    <value>صورة السيارة</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>نعم فعلا</value>
+  </data>
+  <data name="yourPhoneNumber" xml:space="preserve">
+    <value>رقم تليفونك</value>
+  </data>
+  <data name="youwantlogin" xml:space="preserve">
+    <value>تريد تسجيل الدخول؟</value>
+  </data>
+  <data name="zipcode" xml:space="preserve">
+    <value>الرمز البريدي</value>
+  </data>
+  <data name="_otpVerification" xml:space="preserve">
+    <value>التحقق من كلمة المرور</value>
+  </data>
+  <data name="_phonevalidation" xml:space="preserve">
+    <value>أدخل أرقام الهاتف العشرة</value>
+  </data>
+  <data name="_youFrourthDigit" xml:space="preserve">
+    <value>أدخل رقمك الرابع</value>
+  </data>
+  <data name="_yourFifthDigit" xml:space="preserve">
+    <value>أدخل رقمك الخامس</value>
+  </data>
+  <data name="_yourFirstDigit" xml:space="preserve">
+    <value>أدخل الرقم الأول الخاص بك</value>
+  </data>
+  <data name="_yourSecondDigit" xml:space="preserve">
+    <value>أدخل رقمك الثاني</value>
+  </data>
+  <data name="_yourThirdDigit" xml:space="preserve">
+    <value>أدخل رقمك الثالث</value>
+  </data>
+  <data name="CardHolderName" xml:space="preserve">
+    <value>إسم حامل البطاقة</value>
+  </data>
+  <data name="CardNumber" xml:space="preserve">
+    <value>رقم البطاقة</value>
+  </data>
+  <data name="Driveronway" xml:space="preserve">
+    <value>السائق في الطريق اليك</value>
+  </data>
+  <data name="Entercardnumber" xml:space="preserve">
+    <value>ادخل رقم البطاقة</value>
+  </data>
+  <data name="Entercvv1" xml:space="preserve">
+    <value>ادخل cvv</value>
+  </data>
+  <data name="Enterholdername" xml:space="preserve">
+    <value>ادخل إسم حامل البطاقة</value>
+  </data>
+  <data name="ExpiryMonth" xml:space="preserve">
+    <value>شهر الانتهاء</value>
+  </data>
+  <data name="ExpiryYear" xml:space="preserve">
+    <value>سنة الانتهاء</value>
+  </data>
+  <data name="MasterCard" xml:space="preserve">
+    <value>ماستر كارد</value>
+  </data>
+  <data name="Orderacceptedbydriver" xml:space="preserve">
+    <value>تم قبول الطلب من السائق</value>
+  </data>
+  <data name="Orderacceptedbyseller" xml:space="preserve">
+    <value>تم قبول الطلب من البائع</value>
+  </data>
+  <data name="Orderassignedtodriver" xml:space="preserve">
+    <value>تم إرسال الطلب للسائق</value>
+  </data>
+  <data name="Ordercancel" xml:space="preserve">
+    <value>إلغاء الطلب</value>
+  </data>
+  <data name="Ordercompleted1" xml:space="preserve">
+    <value>تم اكتمال الطلب</value>
+  </data>
+  <data name="Ordercreated" xml:space="preserve">
+    <value>تم إنشاء الطلب</value>
+  </data>
+  <data name="Orderrejectedby" xml:space="preserve">
+    <value>تم رفض الطلب من البائع</value>
+  </data>
+  <data name="Orderrejectedbydriver" xml:space="preserve">
+    <value>تم رفض الطلب من السائق</value>
+  </data>
+  <data name="VisaCard" xml:space="preserve">
+    <value>فيزا كارد</value>
+  </data>
+  <data name="entercity" xml:space="preserve">
+    <value>entercity</value>
+  </data>
+  <data name="entercountry" xml:space="preserve">
+    <value>entercountry</value>
+  </data>
+  <data name="enterpostcode" xml:space="preserve">
+    <value>enterpostcode</value>
+  </data>
+  <data name="enterstate" xml:space="preserve">
+    <value>enterstate</value>
+  </data>
+  <data name="enterstreetaddress" xml:space="preserve">
+    <value>enterstreetaddress</value>
+  </data>
+  <data name="entersurname" xml:space="preserve">
+    <value>entersurname</value>
+  </data>
+  <data name="postcode" xml:space="preserve">
+    <value>postcode</value>
+  </data>
+  <data name="streetaddress" xml:space="preserve">
+    <value>streetaddress</value>
+  </data>
+  <data name="surname" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+  <data name="delivery_address" xml:space="preserve">
+    <value>عنوان التسليم</value>
+  </data>
+  <data name="setting" xml:space="preserve">
+    <value>ضبط</value>
+  </data>
+  <data name="change" xml:space="preserve">
+    <value>اختيار طريقة الدفع</value>
+  </data>
+  <data name="searchShop" xml:space="preserve">
+    <value>متجر البحث</value>
+  </data>
+  <data name="Theapplicationhasbeenacceptedandisbeingprepared" xml:space="preserve">
+    <value>تم قبول الطلب وجاري تحضيره</value>
+  </data>
+  <data name="Thedeliveryspecialistisonyourway" xml:space="preserve">
+    <value>اخصائي التوصيل في الطريق اليك</value>
+  </data>
+  <data name="Therequesthasbeencompleted" xml:space="preserve">
+    <value>تم اكتمال الطلب</value>
+  </data>
+  <data name="Yourorderwillbeconfirmed" xml:space="preserve">
+    <value>دقايق ونأكد طلبك</value>
+  </data>
+  <data name="editShop" xml:space="preserve">
+    <value>تحرير متجر</value>
+  </data>
+  <data name="shop" xml:space="preserve">
+    <value>متجر</value>
+  </data>
+  <data name="addoncategoryname" xml:space="preserve">
+    <value>أدخل اسم فئة الملحق</value>
+  </data>
+  <data name="enterCategory" xml:space="preserve">
+    <value>أدخل الفئة</value>
+  </data>
+  <data name="uploadCompanyBanner" xml:space="preserve">
+    <value>تحميل شعار الشركة</value>
+  </data>
+  <data name="addonMPrice" xml:space="preserve">
+    <value>سعر المنتج المتوسط</value>
+  </data>
+  <data name="loginUser" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>اغلق</value>
+  </data>
+  <data name="closed" xml:space="preserve">
+    <value>مغلق</value>
+  </data>
+  <data name="open" xml:space="preserve">
+    <value>مفتوح</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>الحاله</value>
+  </data>
+  <data name="addonSPrice" xml:space="preserve">
+    <value>سعر المنتج صغير</value>
+  </data>
+  <data name="hide" xml:space="preserve">
+    <value>إخفاء</value>
+  </data>
+  <data name="show" xml:space="preserve">
+    <value>تبين</value>
+  </data>
+  <data name="enterproductcategoryname" xml:space="preserve">
+    <value>أدخل اسم فئة المنتج</value>
+  </data>
+  <data name="productcategoryname" xml:space="preserve">
+    <value>اسم فئة المنتج</value>
+  </data>
+  <data name="finished" xml:space="preserve">
+    <value>خلص من عندنا</value>
+  </data>
+  <data name="nodata" xml:space="preserve">
+    <value>لاتوجد بيانات</value>
+  </data>
+  <data name="orderpickbyself" xml:space="preserve">
+    <value>استلام الطلب من الفرع</value>
+  </data>
+  <data name="complete" xml:space="preserve">
+    <value>انهاء</value>
+  </data>
+  <data name="delivered" xml:space="preserve">
+    <value>تم التوصيل</value>
+  </data>
+  <data name="haveyoudelivedrorder" xml:space="preserve">
+    <value>هل قمت بتسليم الطلب؟</value>
+  </data>
+  <data name="haveyourecivedorder" xml:space="preserve">
+    <value>هل استعادت الطلب؟</value>
+  </data>
+  <data name="notificationpopup_Allow" xml:space="preserve">
+    <value>Allow</value>
+  </data>
+  <data name="notificationpopup_DontAllow" xml:space="preserve">
+    <value>Don't Allow</value>
+  </data>
+  <data name="notificationpopup_headertitle" xml:space="preserve">
+    <value>"Flower&amp;Candy" Would Like to Send You Notifications</value>
+  </data>
+  <data name="notificationpopup_title" xml:space="preserve">
+    <value>Notifications may include alerts, sounds, icon badges.</value>
+  </data>
+  <data name="delete_card" xml:space="preserve">
+    <value>هل أنت متأكد أنك تريد حذف هذه البطاقة؟</value>
+  </data>
+  <data name="saved_Cards" xml:space="preserve">
+    <value>البطاقات المحفوظة</value>
+  </data>
+</root>

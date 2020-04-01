@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+             xmlns:custom="clr-namespace:FlowersAndCandyCustomer.CustomControls"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+              xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:ffTransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             x:Class="FlowersAndCandyCustomer.Views.EditProfilePage">
+
+     <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Image HeightRequest="30" WidthRequest="30" Source="ico_back.png"
+    
+                   HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                   <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="back_Tapped"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+                </Image>
+            
+           <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="White" Text="{strings:Translate profile}"
+                  FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+
+            <Image HeightRequest="25" WidthRequest="25"
+                   HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"/>
+           
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+   
+    <ContentPage.Content>
+
+        <ScrollView>
+        <StackLayout HorizontalOptions="FillAndExpand" Spacing="-6" VerticalOptions="StartAndExpand" Padding="30,15,30,20"
+                     BackgroundColor="Transparent">
+
+                     <RelativeLayout Margin="0,0,10,0" HorizontalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="200" >
+
+                        <Grid
+                       RelativeLayout.WidthConstraint="{ConstraintExpression
+                     Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression
+                    Type=RelativeToParent,Property=Height,Factor=1,Constant=0}" 
+                        
+                        Margin="0,0,0,0" VerticalOptions="Center" HorizontalOptions="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="220">
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="160">
+                                </RowDefinition>
+
+                                <RowDefinition Height="60">
+                                </RowDefinition>
+
+                            </Grid.RowDefinitions>
+
+
+                            <Frame  BorderColor="Transparent" Padding="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" 
+                                    CornerRadius="360" BackgroundColor="White" HasShadow="false" >
+
+                            <ff:CachedImage CacheType="None" DownsampleHeight="200" x:Name="userImage" LoadingPlaceholder="user_placeholder2.png" Margin="6" Grid.Row="0" Grid.Column="0" Source="user_placeholder2.png" 
+                                                      VerticalOptions="CenterAndExpand" WidthRequest="120" HeightRequest="120" HorizontalOptions="Center"
+                                                 Aspect="Fill" >
+                                <ff:CachedImage.Transformations>
+                                    <ffTransformations:CircleTransformation BorderSize="5" BorderHexColor="#FE1F78" />
+                                </ff:CachedImage.Transformations>
+                                <ff:CachedImage.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Cimg_Tapped">
+                                        </TapGestureRecognizer>
+                                    </ff:CachedImage.GestureRecognizers>
+                                </ff:CachedImage>
+
+
+                          
+
+
+
+
+                        </Frame>
+
+                        <Image  Source="camera_ic.png" Margin="0,15,50,0" WidthRequest="30" Grid.RowSpan="2" Grid.Column="0" HeightRequest="30" VerticalOptions="Center" HorizontalOptions="End">
+                                <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Cimg_Tapped">
+                                    </TapGestureRecognizer>
+                                </Image.GestureRecognizers>
+                            </Image>
+
+                        </Grid>
+                    </RelativeLayout>
+
+
+            
+            <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="fNameLbl"
+                   TextColor="Gray" Margin="5,-20,0,0" Text="{strings:Translate first_name}" FontSize="Medium" HorizontalOptions="Start"/>
+
+            <Entry  x:Name="fNameTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate enter_first_name}"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+
+
+
+                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="lNameLbl"
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate last_name}" FontSize="Medium" HorizontalOptions="Start"/>
+
+                <Entry  x:Name="lNameTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate enter_last_name}"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+
+
+
+            
+            
+
+                <Label IsVisible="False" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="surnameLbl"
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate surname}" FontSize="Medium" HorizontalOptions="Start"/>
+                <Entry IsVisible="False" x:Name="surnameTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate entersurname}"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+
+                <Label IsVisible="False" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="streetaddressLbl"
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate streetaddress}" FontSize="Medium" HorizontalOptions="Start"/>
+                <Entry IsVisible="False" x:Name="streetaddressTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate enterstreetaddress}"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+
+                <Label IsVisible="False" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="cityLbl"
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate city}" FontSize="Medium" HorizontalOptions="Start"/>
+                <Entry IsVisible="False" x:Name="cityTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate entercity}"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+
+                <Label IsVisible="False" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="stateLbl"
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate state}" FontSize="Medium" HorizontalOptions="Start"/>
+                <Entry IsVisible="False" x:Name="stateTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate enterstate}"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+
+                <Label IsVisible="False" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="countryLbl"
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate country}" FontSize="Medium" HorizontalOptions="Start"/>
+               
+            
+            
+                <Picker  SelectedIndexChanged="CountryTxt_SelectedIndexChanged" Title="" ItemDisplayBinding="{Binding name}" HorizontalOptions="FillAndExpand" FontSize="16"  IsVisible="False" x:Name="countryTxt">
+
+                </Picker>
+
+
+
+                <Label IsVisible="False" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="postcodeLbl"
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate postcode}" FontSize="Medium" HorizontalOptions="Start"/>
+                <Entry IsVisible="False"  Keyboard="Numeric" x:Name="postcodeTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate enterpostcode}"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+
+
+
+
+
+                <Label FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="emailLbl"
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate email}" FontSize="Medium" HorizontalOptions="Start"/>
+
+            <Entry  x:Name="emailTxt" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                   Placeholder="{strings:Translate enter_email}"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+            
+            <Label   FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" x:Name="phoneNumberLbl"
+                   TextColor="Gray" Margin="5,20,0,0" Text="{strings:Translate phone_number}" FontSize="Medium" HorizontalOptions="Start"/>
+
+
+
+                <StackLayout     Orientation="Horizontal" Padding="0" Spacing="5">
+
+
+                    <Picker  SelectedIndexChanged="PhoneCodePicker_SelectedIndexChanged" x:Name="phoneCodePicker" WidthRequest="60">
+                      
+                    </Picker>
+
+                    <Image Source="drop_arrow.png" HeightRequest="13"
+                               WidthRequest="13" Margin="0,15,0,0" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+
+                    <Entry  x:Name="phoneNumberTxt" 
+                   FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}" HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="Start" 
+                   Placeholder="{strings:Translate enter_phone_number}" Keyboard="Numeric"
+                   PlaceholderColor="Gray" FontSize="Medium" TextColor="Black"/>
+                </StackLayout>
+
+
+                <Button x:Name="changePasswordBtn"   Margin="0,50,0,0" FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}" FontAttributes="Bold" Text="{strings:Translate submit}"  Clicked="Btn_Clicked"
+                         TextColor="White" BackgroundColor="#FE1F78" HorizontalOptions="CenterAndExpand"
+                      WidthRequest="175" BorderRadius="30" FontSize="Medium" VerticalOptions="StartAndExpand"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

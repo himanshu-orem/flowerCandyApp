@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:adc="clr-namespace:FlowersAndCandyCustomer.Repository"
+             xmlns:strings="clr-namespace:FlowersAndCandyCustomer;assembly=FlowersAndCandyCustomer"
+             xmlns:custom="clr-namespace:FlowersAndCandyCustomer.CustomControls"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="FlowersAndCandyCustomer.Views.PrivacyPolicyPage">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+            <Image HeightRequest="30" WidthRequest="30" Source="ico_back.png"
+                   HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                   <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackImgTapped}"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+                </Image>
+            
+           <Label FontFamily="{x:Static adc:App_FontFamilies.PageTitles}" 
+                   StyleId="{x:Static adc:App_FontFamilies.PageTitles}"
+                   TextColor="White" Text="{strings:Translate privacy_policy}"
+                  FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+            
+                  <Image HeightRequest="25" WidthRequest="25"
+                   HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"/>
+             
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView Padding="0,0,0,10">
+        <!--<custom:LineLabel LineSpacing="1.2" FontFamily="{x:Static adc:App_FontFamilies.PageTextRegular}" 
+           StyleId="{x:Static adc:App_FontFamilies.PageTextRegular}"
+           HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Start"
+           LineBreakMode="WordWrap" Margin="10"
+           FontSize="Medium" Text="{Binding PrivacyPolicyText}" TextColor="Gray"/>-->
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <WebView VerticalOptions="FillAndExpand">
+        <WebView.Source>
+            <HtmlWebViewSource   Html="{Binding PrivacyPolicyText}"/>
+        </WebView.Source>
+    </WebView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
